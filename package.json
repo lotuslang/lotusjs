@@ -1,0 +1,28 @@
+{
+  "name": "lotuslang",
+  "version": "0.0.1",
+  "description": "A simple templating engine powered the Lotus programming language",
+  "main": "src/app.js",
+  "scripts": {
+    "start" : "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotuslang/lotus.git"
+  },
+  "keywords": [
+    "template",
+    "express",
+    "templating",
+    "web",
+    "lotus",
+    "language"
+  ],
+  "author": "LotusLang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lotuslang/lotus/issues"
+  },
+  "homepage": "https://github.com/lotuslang/lotus#readme"
+}
