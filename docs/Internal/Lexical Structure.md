@@ -6,9 +6,13 @@ For more user- and beginner-friendly informations, as well as more in-depth expl
 
 If you're a developers wanting to implement a tokenizer/lexer for Lotus, you might want to see [Lexer Algorithms] for more machine-friendly definitions.
 
+
+
 ## Comments
 
 Comments are one or multiple lines of text ignored by the interpreter. See [Comments] for more information.
+
+
 
 ### Single line comments
 
@@ -24,6 +28,8 @@ p("This # is not declaring a comment because it is in a string") # but this one 
 # This code is interpreted as a comment because it begins with a '#' symbol
 # h2("And welcome on my amazing website!")
 ```
+
+
 
 ### Limited or multi line comments
 
@@ -42,6 +48,8 @@ comment
 
 p("### has no effect in a string !")
 ```
+
+
 
 ### Embedded documentation
 
@@ -63,8 +71,6 @@ for a simple function
 ## Keywords
 
 Keywords are words that are reserved by the language, and thus can't be (re)declared by the program. See [Keywords] for more information.
-
-
 
 ### if and else keywords
 
@@ -98,8 +104,6 @@ else
 <p>Hello there</p>
 </div>
 
-
-
 ```ruby
 n = 4
 
@@ -111,7 +115,6 @@ else if (n == 3)
     p("n is equal to 3")
 else 
     p("n is more than 3")
-    
 ```
 
 <div>
@@ -119,12 +122,10 @@ else
 <p>n is more than 3</p>
 </div>
 
-
-
 ```ruby
 name = "John"
 
-if (name == "John") p("Hello John") else ("Hello world") # Compact version 
+if (name == "John") p("Hello John") else ("Hello world") # Compact version
 ```
 
 <div>
@@ -181,7 +182,7 @@ while (!isNotFinished)
     if (someString[counter] == ' ')
         isFinished = true
     else # else prints the character of 'someString' at index 'counter'
-        p(someString)
+        p(someString)
 ```
 
 <div>
@@ -207,7 +208,7 @@ The `do` keyword is used in association with the `while` keyword to create a con
 
 ```ruby
 do 
-    p("Hello")
+    p("Hello") # Will only be executed once because condition is false
 while (false)
 
 do p("World") while (false) # Compact version
@@ -218,8 +219,6 @@ do p("World") while (false) # Compact version
 <p>Hello</p>
 <p>World</p>
 </div>
-
-
 
 ### for keyword
 
@@ -237,8 +236,6 @@ The `for` keyword is used to declare a loop. It has the following format
 
 Each of those section must be separated by semicolon.
 
-
-
 *Example usage :* 
 
 ```ruby
@@ -253,12 +250,10 @@ for i = 0; i < 3; i++; p(i) # Compact version
 <p>2</p>
 </div>
 
-
-
 ```ruby
 # Creates a paragraph with the text "The value of j is " followed by the value of 'i'
 for i = 0; i < 5; i++
- p("The value of j is " + i)
+    p("The value of j is " + i)
 ```
 
 <div>
@@ -278,7 +273,7 @@ for i = 0; i < 5; i++
 # This loop will never be executed, because the condition is empty, therefore evaluating to 'false'.
 # Equivalent to while (false)
 for ;;
- p("This is what loneliness looks like") # This line will never be rendered
+    p("This is what loneliness looks like") # This line will never be rendered
 ```
 
 <div>
@@ -286,13 +281,11 @@ for ;;
 <p>[nothing]</p>
 </div>
 
-
-
 ```ruby
 # Infinite loop. 
 # Equivalent to while (true)
 for ; true;
- p("And this is infinity!")
+    p("And this is infinity!")
 ```
 
 <div>
@@ -303,3 +296,99 @@ for ; true;
 </div>
 
 
+
+### foreach and in keyword
+
+The `foreach` keyword is used to declare a loop which iterates through a collection. It has the following format
+
+- the `foreach` keyword : declares an iterative loop
+
+- a *variable identifier* : this is the name of the variable that will be declared and assigned at every iteration. The variable should not be already declared
+
+- the `in` keyword
+
+- a *collection* : this is the collection that this loop will iterate through.
+
+- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `foeach` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `foreach` declaration.
+
+*Example usage :*
+
+```ruby
+fruits = [ "Apple", "Banana", "Grapes" ]
+
+foreach fruit in fruits
+    p(fruit)
+```
+
+<div>
+<b> Output </b>
+<p>Apple</p>
+<p>Banana</p>
+<p>Grapes</p>
+</div>
+
+```ruby
+names = [ "John", "Clara" ]
+
+foreach name in names p("Hello " + name) # Compact form
+```
+
+<div>
+<b>Output</b>
+<p>John</p>
+<p>Clara</p>
+</div>
+
+
+
+### break and continue keyword
+
+The `break` keyword is used to stop the execution of a loop. it can be used in a `while`, `for` or `foreach` loop.
+
+*Example usage :*
+
+```ruby
+items = [ "tape", "pen", "glue", "poison", "speaker" ]
+
+foreach item in items
+    if (item == "poison")
+        break
+    else
+        p(item)
+```
+
+<div>
+<b> Output </b>
+<p>tape</p>
+<p>pen</p>
+<p>glue</p>
+</div>
+
+
+
+The `continue` keyword is used to skip an iteration of a loop. It can be used in a `while`, `for`, or `foreach` loop. it can be used to avoid an `else` clause.
+
+*Example usage :*
+
+```ruby
+grades = [ 14, 13, 8, 10, 19 ]
+
+foreach number in notes
+    if (number < 10)
+        continue;
+    p(item)
+```
+
+<div>
+<b> Output </b>
+<p>14</p>
+<p>13</p>
+<p>10</p>
+<p>19</p>
+</div>
+
+
+
+### extends keyword
+
+The `extends` keyword is used at the beginning of a file to signinfy that it inhertits from/extends another lotus file. 
