@@ -351,12 +351,12 @@ The `continue` keyword is used to skip an iteration of a loop. It can be used in
 *Example usage :*
 
 ```ruby
-grades = [ 14, 13, 8, 10, 19 ]
+marks = [ 14, 13, 8, 10, 19 ]
 
-foreach note in notes
-    if (note < 10)
+foreach mark in marks
+    if (mark < 10)
         continue;
-    p(note)
+    p(mark)
 ```
 
 <div>
