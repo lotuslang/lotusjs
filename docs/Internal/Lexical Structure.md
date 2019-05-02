@@ -6,13 +6,9 @@ For more user- and beginner-friendly informations, as well as more in-depth expl
 
 If you're a developers wanting to implement a tokenizer/lexer for Lotus, you might want to see [Lexer Algorithms] for more machine-friendly definitions.
 
-
-
 ## Comments
 
 Comments are one or multiple lines of text ignored by the interpreter. See [Comments] for more information.
-
-
 
 ### Single line comments
 
@@ -28,8 +24,6 @@ p("This # is not declaring a comment because it is in a string") # but this one 
 # This code is interpreted as a comment because it begins with a '#' symbol
 # h2("And welcome on my amazing website!")
 ```
-
-
 
 ### Limited or multi line comments
 
@@ -49,8 +43,6 @@ comment
 p("### has no effect in a string !")
 ```
 
-
-
 ### Embedded documentation
 
 The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. Refer to the [Embedded documentation] section for more information on embedded documentation.
@@ -65,8 +57,6 @@ This is a simple documentation
 for a simple function
 =end
 ```
-
-
 
 ## Keywords
 
@@ -133,8 +123,6 @@ if (name == "John") p("Hello John") else ("Hello world") # Compact version
 <p>Hello John</p>
 </div>
 
-
-
 ### true and false keywords
 
 The `true` and `false` keywords are used, respectively, to declare a condition that's always evaluated to true, and to declare a condition that's always evaluated to false. It can be used in an `if` statement, in `while` and `for` loops, and in [conditional expressions], as well as a value for a variable. See [Conditions] for more information. 
@@ -154,8 +142,6 @@ else
 <b> Output </b>
 <p> Hello Clara!</p>
 </div>
-
-
 
 ### while and do keyword
 
@@ -253,7 +239,7 @@ for i = 0; i < 3; i++; p(i) # Compact version
 ```ruby
 # Creates a paragraph with the text "The value of j is " followed by the value of 'i'
 for i = 0; i < 5; i++
-    p("The value of j is " + i)
+    p("The value of j is " + i)
 ```
 
 <div>
@@ -273,7 +259,7 @@ for i = 0; i < 5; i++
 # This loop will never be executed, because the condition is empty, therefore evaluating to 'false'.
 # Equivalent to while (false)
 for ;;
-    p("This is what loneliness looks like") # This line will never be rendered
+    p("This is what loneliness looks like") # This line will never be rendered
 ```
 
 <div>
@@ -285,7 +271,7 @@ for ;;
 # Infinite loop. 
 # Equivalent to while (true)
 for ; true;
-    p("And this is infinity!")
+    p("And this is infinity!")
 ```
 
 <div>
@@ -294,8 +280,6 @@ for ; true;
 <b>A rendering error occured in file <code>index.lot</code> at line 3 :</b> <code>for ; true;</code>
 </p>
 </div>
-
-
 
 ### foreach and in keyword
 
@@ -339,8 +323,6 @@ foreach name in names p("Hello " + name) # Compact form
 <p>Clara</p>
 </div>
 
-
-
 ### break and continue keyword
 
 The `break` keyword is used to stop the execution of a loop. it can be used in a `while`, `for` or `foreach` loop.
@@ -364,8 +346,6 @@ foreach item in items
 <p>glue</p>
 </div>
 
-
-
 The `continue` keyword is used to skip an iteration of a loop. It can be used in a `while`, `for`, or `foreach` loop. it can be used to avoid an `else` clause.
 
 *Example usage :*
@@ -373,10 +353,10 @@ The `continue` keyword is used to skip an iteration of a loop. It can be used in
 ```ruby
 grades = [ 14, 13, 8, 10, 19 ]
 
-foreach number in notes
-    if (number < 10)
+foreach note in notes
+    if (note < 10)
         continue;
-    p(item)
+    p(note)
 ```
 
 <div>
@@ -387,8 +367,6 @@ foreach number in notes
 <p>19</p>
 </div>
 
-
-
 ### extends keyword
 
-The `extends` keyword is used at the beginning of a file to signinfy that it inhertits from/extends another lotus file. 
+The `extends` keyword is used at the beginning of a file to signinfy that it inhertits from another lotus file (refered to as `extending`). 
