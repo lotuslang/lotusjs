@@ -14,9 +14,9 @@ Base_Class (Classe(s)donc cette classe hérite)
 
 ### Héritée par
 
-Sub_Class_Name (Classe(s) qui hérite de cette 
+Sub_Class_Name (Classe(s) qui hérite de cette classe)
 
-### 
+
 
 ## Méthodes & Constructeurs
 
@@ -52,7 +52,7 @@ Sub_Class_Name (Classe(s) qui hérite de cette
 
 Disponible depuis la version a.b
 
-Aucun changement majeur depuis 
+Aucun changement majeur depuis
 
 ***OU***
 

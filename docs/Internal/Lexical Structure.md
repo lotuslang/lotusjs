@@ -1,14 +1,14 @@
 # Lexical Structure
 
-This document describes the meaning of different characters and keywords in  the Lotus language. It is designed to be a sort of standard for the syntax of Lotus. 
+This document describes the meaning of different characters and keywords in  the Lotus language. It is designed to be a sort of standard for the syntax of Lotus.
 
-For more user- and beginner-friendly informations, as well as more in-depth explanation of each keyword, please refer to the [documentation].
+For more user- and beginner-friendly informations, as well as more in-depth explanation of each keyword, please refer to the [documentation]().
 
-If you're a developers wanting to implement a tokenizer/lexer for Lotus, you might want to see [Lexer Algorithms] for more machine-friendly definitions.
+If you're a developers wanting to implement a tokenizer/lexer for Lotus, you might want to see [Lexer Algorithms]() for more machine-friendly definitions.
 
 ## Comments
 
-Comments are one or multiple lines of text ignored by the interpreter. See [Comments] for more information.
+Comments are one or multiple lines of text ignored by the interpreter. See [Comments]() for more information.
 
 ### Single line comments
 
@@ -27,13 +27,13 @@ p("This # is not declaring a comment because it is in a string") # but this one 
 
 ### Limited or multi line comments
 
-The symbol `#` repeated three times (`###`) is used to delimit the beginning and end of a limited or multi line comment. It can be only be used on a new line. If it is included in a tring or character literal, it is ignored. A limited or multi line comment is delimited by a pair of `###`. 
+The symbol `#` repeated three times (`###`) is used to delimit the beginning and end of a limited or multi line comment. It can be only be used on a new line. If it is included in a tring or character literal, it is ignored. A limited or multi line comment is delimited by a pair of `###`.
 
 *Example usage :*
 
 ```ruby
 ###
-This is 
+This is
 a multi line
 comment
 ###
@@ -45,14 +45,14 @@ p("### has no effect in a string !")
 
 ### Embedded documentation
 
-The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. Refer to the [Embedded documentation] section for more information on embedded documentation.
+The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. See [Embedded documentation]() for more information.
 
-**Note :** This type of comment can be used as a multi line comment or to automatically generate documentation. See the [Embedded documentation]for more information.) section for more information.
+**Note :** This type of comment can be used as a multi line comment or to automatically generate documentation. See [Embedded documentation]() for more information.) section for more information.
 
 *Example usage :*
 
 ```ruby
-=begin 
+=begin
 This is a simple documentation
 for a simple function
 =end
@@ -60,11 +60,11 @@ for a simple function
 
 ## Keywords
 
-Keywords are words that are reserved by the language, and thus can't be (re)declared by the program. See [Keywords] for more information.
+Keywords are words that are reserved by the language, and thus can't be (re)declared by the program. See [Keywords]() for more information.
 
 ### if and else keywords
 
-The `if` and `else` keywords are used to create conditional code blocks. It has the following format
+The `if` and `else` keywords are used to create conditional code blocks. See [Conditions]() and for more information. It has the following format
 
 - the `if` keyword : declares an `if` clause
 
@@ -76,9 +76,9 @@ The `if` and `else` keywords are used to create conditional code blocks. It has 
 
 - a *code line* OR an *indented code block* : this is the code that is to be executed if the condition is true. If it's a single code line, it can be on the same line as the `if` and  `else` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with the same indetation as the `if` code block
 
-**Note :** You can chain multiple if/else clause. See [Conditions] for more information.
+**Note :** You can chain multiple if/else clause. See [Conditions]() for more information.
 
-*Example usage :* 
+*Example usage :*
 
 ```ruby
 someCondition = true
@@ -103,7 +103,7 @@ else if (n == 2)
     p("n is equal to 2")
 else if (n == 3)
     p("n is equal to 3")
-else 
+else
     p("n is more than 3")
 ```
 
@@ -125,7 +125,7 @@ if (name == "John") p("Hello John") else ("Hello world") # Compact version
 
 ### true and false keywords
 
-The `true` and `false` keywords are used, respectively, to declare a condition that's always evaluated to true, and to declare a condition that's always evaluated to false. It can be used in an `if` statement, in `while` and `for` loops, and in [conditional expressions], as well as a value for a variable. See [Conditions] for more information. 
+The `true` and `false` keywords are used, respectively, to declare a condition that's always evaluated to true, and to declare a condition that's always evaluated to false. It can be used in an `if` statement, in `while` and `for` loops, in [conditional statements](), or as a value for a variable. See [Conditions]() and [Conditional statements]() for more information.
 
 *Example usage :*
 
@@ -143,17 +143,15 @@ else
 <p> Hello Clara!</p>
 </div>
 
-### while and do keyword
+### while and do keywords
 
-The `while` keyword is used to declare a conditional loop. It has the followng format
+The `while` keyword is used to declare a conditional loop. See [while loop]() for more information. It has the following format
 
 - the `while` keyword : declares a `while` loop
 
 - a *condition* in parenthesis : This condition will be chacked at the beginning of each iteration of the loop. If it's true, execute the code line or contained in the code block. Otherwise, skip the loop and go to the code line after the code block.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `while` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `while` 
-
-See [while loops] for more information
+- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `while` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `while`
 
 *Example usage :*
 
@@ -193,7 +191,7 @@ The `do` keyword is used in association with the `while` keyword to create a con
 *Example usage :*
 
 ```ruby
-do 
+do
     p("Hello") # Will only be executed once because condition is false
 while (false)
 
@@ -208,9 +206,9 @@ do p("World") while (false) # Compact version
 
 ### for keyword
 
-The `for` keyword is used to declare a loop. It has the following format
+The `for` keyword is used to declare a loop. See [for loops]() for more information. It has the following format
 
-- the `for` keyword : declares a loop 
+- the `for` keyword : declares a `for` loop
 
 - a *variable declaration or assignement* : this variable will be declared (or assigned if it already exists) right before the first execution of the loop, and never after. If the variable is declared for the first time, it's only declared in the loop's scope
 
@@ -222,7 +220,7 @@ The `for` keyword is used to declare a loop. It has the following format
 
 Each of those section must be separated by semicolon.
 
-*Example usage :* 
+*Example usage :*
 
 ```ruby
 # Creates a paragraphs for each value of 'i'
@@ -251,7 +249,7 @@ for i = 0; i < 5; i++
 <p>The value of j is 4</p>
 </div>
 
-**Note :** Each of the for sections can be empty, but there will be consequences. See [for loops] for more information.
+**Note :** Each of the for sections can be empty, but there will be consequences. See [for loops]() for more information.
 
 *Example usage*
 
@@ -263,12 +261,12 @@ for ;;
 ```
 
 <div>
-<b> Output </b> 
+<b> Output </b>
 <p>[nothing]</p>
 </div>
 
 ```ruby
-# Infinite loop. 
+# Infinite loop.
 # Equivalent to while (true)
 for ; true;
     p("And this is infinity!")
@@ -281,13 +279,13 @@ for ; true;
 </p>
 </div>
 
-### foreach and in keyword
+### foreach and in keywords
 
-The `foreach` keyword is used to declare a loop which iterates through a collection. It has the following format
+The `foreach` keyword is used to declare a loop which iterates through a collection. See [foreach loop]() and for more information. It has the following format
 
 - the `foreach` keyword : declares an iterative loop
 
-- a *variable identifier* : this is the name of the variable that will be declared and assigned at every iteration. The variable should not be already declared
+- an *identifier* : this is the name of the variable that will be declared and assigned at every iteration. The variable should not be already declared
 
 - the `in` keyword
 
@@ -325,12 +323,12 @@ foreach name in names p("Hello " + name) # Compact form
 
 ### break and continue keyword
 
-The `break` keyword is used to stop the execution of a loop. it can be used in a `while`, `for` or `foreach` loop.
+The `break` keyword is used to stop the execution of a loop. it can be used in a `while`, `for` or `foreach` loop. See [break keyword]() and [continue keyword]() for more information.
 
 *Example usage :*
 
 ```ruby
-items = [ "tape", "pen", "glue", "poison", "speaker" ]
+items = [ "tape", "pen", "glue", "poison", "speaker" ]    
 
 foreach item in items
     if (item == "poison")
@@ -367,50 +365,248 @@ foreach mark in marks
 <p>19</p>
 </div>
 
+### def keyword
+
+The `def` keyword is used to declare a function or a method. Functions are fondamental to programming, so please see [Getting started with Lotus]() and [Functions and Methods]() for more information. They have the following format
+
+- the `def` keyword : declares a function or a method
+
+- an *identifier* : this is the name of the function/method
+
+- *opening and closing parenthesis* 
+  
+  - *optional* a list comma-separated of identifier : this is the arguments that need to be passed to the function each time it is called. Arguments can have default values, or there can be an undefined number of arguments. See [Functions' arguments]() for more information.
+
+- one of two things :
+  
+  - either a lambda declaration, which consists of a `=>` symbol and a single code line. See [Lambas]() for more information.
+  
+  - or an *indented  code block* : this is the code that will be executed when the function is called
+
+*Example usage*
+
+```ruby
+def SayHiTo(username)
+    p("Oh, hi " + username)
+    
+SayHiTo("Mark")
+```
+
+<div>
+<b> Output </b>
+<p>Oh, hi Mark</p>
+</div>
+
+### class and interface keywords
+
+The `class` and `interface` keywords are used, respectively, to declare a class and to declare an interface. Classes and interfaces are a pillar stone of object-oriented programming, so please see to [Inheritance](), [Classes](), and [Interfaces]() for more information. They have the following format
+
+- the `class` or `interface` keyword : respectively declare a class or an interface.
+
+- an *identifier* : this is the type's name.
+
+- (*optional*) the `extends` keyword : indicates that this type inherits from another class and/or other interface(s).
+
+- (*optional*) a comma-separated list of interfaces and/or a class : this is the list of types from which the curent type will inherit.
+
+- an *indented body* : this is the body of the type.
+
+*Example usage :*
+
+```ruby
+class Vehicle
+    
+    brand = ""
+    shortName = ""
+    
+    Vehicle(brand, shortName)
+        this.brand = brand
+        this.shortName = shortName
+        
+    def printInfo()
+        p("This vehicle is a " + shortName + " from " + brand)
+         
+lightCycle = new Vehicle("Syd Mead", "Light cycle")
+lightCycle.printInfo()
+```
+
+<div>
+<b> Output </b>
+<p>This is a Light cycle from Syd Mead</p>
+</div>
+
+### namespace keyword
+
+The `namespace` keyword is used to declare certain functions, classes and interfaces as "belonging" to a namespace. That is, they are only accessible if this exact namespace is referenced through an `import` directive in the file wanting to use it. It can only be used once in a file. See [Namespaces]() and [from and import keywords]() for more information. It has the following format
+
+- the `namespace` keyword : declares a namespace directive.
+
+- an `identifier` : this is the name of your namespace.
+
+**Note :** If the namespace is part of a bigger namespace (e.g. the `System.Text` namespace is part of the larger `System` namespace), you need to indicate it using dots to separate different parts of the namespace name : `BiggerNamespace.YourNamespace`
+
+*Example usage :*
+
+`perso_lib.lts` | File that contains functions in the `PersonalLib` namespace
+
+```ruby
+namespace PersonalLib
+
+def capitalizeFirstLetter(inputString)
+    inputString[0] = inputString[0].toUpper()
+    return inputString
+```
+
+
+
+`index.lts` | File used as the website landing page
+
+```ruby
+from "perso_lib.lts" import PersonalLib
+
+p(capitalizeFirstLetter("capitalization is important"))
+```
+
+<div>
+<b> Output </b>
+<p>Capitalization is important</p>
+</div>
+
+### from and import keywords
+
+The  `import` keyword is used to import a namespace. See [Namespaces]() and [from and import keywords]() for more information. It has the following format
+
+- the `import` keyword : declares an `import` statement
+
+- an *identifier* : the name of the namespace you want to import
+
+
+
+```ruby
+import System.Text
+
+strBuilder = new StringBuilder("");
+
+strBuilder.appendLine("Hello world!")
+strBuilder.appendLine("Welcome to the internet!")
+
+h1(strBuilder)
+```
+
+<div>
+<b> Output </b>
+<p> Hello world!<br/>Welcome to the internet!</p>
+</div>
+
+The `from` keyword is used in combination with an `import` statement to indicate the file in which the imported namespace is declared. It has the following format
+
+- the `from` keyword : indicate a `from` statement
+
+- a string containing a *URI* or a *file name* : the URI can be relative to the file path, can be absolute, or can a URL to a distant lotus file. If it's a file name, it has to be in the same directory as the current lotus file.
+
+*Example usage :*
+
+`perso_lib.lts` | File that contains functions in the `PersonalLib`  namespace
+
+```ruby
+namespace PersonalLib
+
+def fibonacci(n)
+    current = 0
+    next = 1
+    
+    for int i = 0; i < n; i++
+        temp = current
+        current = next
+        next += temp
+        
+    return current
+```
+
+`index.lts` | The homepage of the website
+
+```ruby
+from "perso_lib.lts" import PersonalLib
+
+for int i = 0; i < 10; i++
+    p(fibonacci(i))
+```
+
+<div>
+<b> Output </b>
+<p>0</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>5</p>
+<p>8</p>
+<p>13</p>
+<p>21</p>
+<p>34</p>
+</div>
+
+### this keyword
+
+The `this` keyword is used to referer to the current instance of a class or interface, or the currently rendered page. It is particularly useful for identifier disambiguation, in example in a function taking arguments that have the same name as some members of a class. See [this keyword]() for more information. 
+
+*Example usage :*
+
+```ruby
+class Student
+    
+    name = ""
+    grade = -1
+    marks = []
+    averageMark = -1
+
+    Student(name, grade, marks)
+        this.name = name
+        this.grade = grade
+        this.marks = marks
+        averageMark = marks.average()
+```
+
+
+
 ### extends keyword
 
 The `extends` keyword has too different uses.
 
-#### First use : A file-wide `extends` directive
+#### First use : A file-wide `extends` directive
 
-The `extends` keyword can be used at the beginning of a file to signify that it inherits code from another lotus file (refered to as *extending*). Extending a file basically means pasting the code contained in it to on top of the current file before evaluating the rest of the file. It can only be used at beginning of the file, at the first line of code (note: whitespaces and comments don't count as code, so you can have as many newlines or comments before the `extends` directive). See [Extending a file] for more information. An `extends` directive has the following format
+The `extends` keyword can be used at the beginning of a file to signify that it inherits code from another lotus file (refered to as *extending*). Extending a file basically means pasting the code contained in it to on top of the current file before evaluating the rest of the file. It can only be used at beginning of the file, at the first line of code (note: whitespaces and comments don't count as code, so you can have as many newlines or comments before the `extends` directive). See [Extending a file]() and [extends keyword]() for more information. An `extends` directive has the following format
 
-- The `extends` keyword : declares an `extends` directive
+- the `extends` keyword : declares an `extends` directive.
 
-- A string containing a *URI* or a *file name* : The URI can be relative to the file path, can be absolute, or can a URL to a distant lotus file. If it's a file name, it has to be in the same directory as the current lotus file.
+- a string containing a *URI* or a *file name* : the URI can be relative to the file path, can be absolute, or can a URL to a distant lotus file. If it's a file name, it has to be in the same directory as the current lotus file.
 
 **Note :** If you use a URL, the file designated by it needs to have the mime-type `text/html` or `text/lotus`. otherwise, it will be rejected.
 
-*Example usage :* 
-
-
+*Example usage :*
 
 `page_base.lts` | Base file used by every webite's pages
 
 ```ruby
 html
     head
-        title("Garry's website | " + this.title)
+        title("Garry's website | " + this.name)
         script(src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
         style(src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
 ```
 
-
-
 `index.lts` | File used for the website's landing page
 
 ```ruby
-# landing page for Garry's website 
+# landing page for Garry's website
 extends "page_base.lts"
 
-this.title = "Home"
+name = "Home"
 
 body
     h1("Hello!")
     p("And welcome to my amazing website!")
 ```
-
-
 
 **Output** when rendering index.lts
 
@@ -430,21 +626,15 @@ body
 
 *Whitespaces added for lisibility*
 
-
-
 #### Second use : Type inheritance
 
-The `extends` keyword can be used right after a class or interface declaration to indicate that it inherits from the specified class or interface. A class can inherit only from **one class** but can inherit from an unlimited number or interfaces. See [Inheritance] for more information. It has the following format
+The `extends` keyword can be used right after a class or interface declaration to indicate that it inherits from the specified class or interface. A class can inherit only from **one class** but can inherit from **an unlimited number of interfaces**. See [Inheritance]() and [extends keyword]() for more information. It has the following format
 
-- The `extends` keyword : indicate inheritance from another class or other interface(s)
+- the `extends` keyword : indicate inheritance from another class and/or other interface(s).
 
-- A comma-separated list of interfaces and/or a class.
-
-
+- a comma-separated list of interfaces and/or a class : this is the list of types from which the curent type will inherit.
 
 *Example usage :*
-
-
 
 `animals.lts` | File declaring the Animals namespace
 
@@ -454,13 +644,13 @@ namespace Animals
 class Animal
 
     name = ""
-    
+
     # Constructor for the Animal class
     Animal(name):
         this.name = name
 
     # Returns the name of the animal
-    def GetName():
+    def getName():
         return "I am a " + this.name;
 
 class Dog extends Animal
@@ -469,12 +659,10 @@ class Dog extends Animal
     Dog(): base("Dog"); # Calls the base class constructor's (Animal) with argument "Dog"
 
 class Cat extends Animal
-    
+
     # Constructor for the Cat class
     Cat(): base("Cat"); # calls the base class constructor's (Animal) with argument "Cat"
 ```
-
-
 
 `index.lts` | File rendered
 
@@ -490,10 +678,10 @@ dog = new Dog()
 p(dog.GetName())
 ```
 
-
-
 <div>
-<b>Output</b>
+<b> Output </b>
 <p>I am a Cat</p>
 <p>I am a Dog</p>
 </div>
+
+

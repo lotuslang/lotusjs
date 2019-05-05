@@ -20,8 +20,6 @@ Aucune classe.
 
 - MediaBox
 
-### 
-
 ## Méthodes & Constructeurs
 
 ### Constructeurs
@@ -58,4 +56,4 @@ Aucune classe.
 
 Disponible depuis la version 0.1
 
-Aucun changement majeur depuis 
+Aucun changement majeur depuis

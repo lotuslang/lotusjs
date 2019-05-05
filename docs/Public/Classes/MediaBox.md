@@ -22,7 +22,7 @@ Box
 
 - CodeBox
 
-### 
+
 
 ## Méthodes & Constructeurs
 
@@ -31,7 +31,7 @@ Box
 | Nom              | Description                                                                        | Accessibilité |
 | ---------------- | ---------------------------------------------------------------------------------- | ------------- |
 | Mediabox()       | Créer une nouvelle instance de `MediaBox`                                          | public        |
-| MediaBox(string) | Créer une nouvelle instance de `MediaBox` à partir du média désigné par l'argument | public        |
+| MediaBox(string) | Créer une nouvelle instance de `MediaBox` à partir du média désigné par l'argument | public        |
 
 ### Méthodes
 
@@ -62,7 +62,7 @@ Cette classe devrait être utilisé principalement si le média n'est pas connu 
 
 Disponible depuis la version a.b
 
-Aucun changement majeur depuis 
+Aucun changement majeur depuis
 
 ***OU***
 
