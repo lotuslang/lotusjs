@@ -369,4 +369,131 @@ foreach mark in marks
 
 ### extends keyword
 
-The `extends` keyword is used at the beginning of a file to signinfy that it inhertits from another lotus file (refered to as `extending`). 
+The `extends` keyword has too different uses.
+
+#### First use : A file-wide `extends` directive
+
+The `extends` keyword can be used at the beginning of a file to signify that it inherits code from another lotus file (refered to as *extending*). Extending a file basically means pasting the code contained in it to on top of the current file before evaluating the rest of the file. It can only be used at beginning of the file, at the first line of code (note: whitespaces and comments don't count as code, so you can have as many newlines or comments before the `extends` directive). See [Extending a file] for more information. An `extends` directive has the following format
+
+- The `extends` keyword : declares an `extends` directive
+
+- A string containing a *URI* or a *file name* : The URI can be relative to the file path, can be absolute, or can a URL to a distant lotus file. If it's a file name, it has to be in the same directory as the current lotus file.
+
+**Note :** If you use a URL, the file designated by it needs to have the mime-type `text/html` or `text/lotus`. otherwise, it will be rejected.
+
+*Example usage :* 
+
+
+
+`page_base.lts` | Base file used by every webite's pages
+
+```ruby
+html
+    head
+        title("Garry's website | " + this.title)
+        script(src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+        style(src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+```
+
+
+
+`index.lts` | File used for the website's landing page
+
+```ruby
+# landing page for Garry's website 
+extends "page_base.lts"
+
+this.title = "Home"
+
+body
+    h1("Hello!")
+    p("And welcome to my amazing website!")
+```
+
+
+
+**Output** when rendering index.lts
+
+```handlebars
+<html>
+    <head>
+        <title>Garry's website | Home</title>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"/>
+        <style src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <p>And welcome to my amazing website!</p>
+    </body>
+</html>
+```
+
+*Whitespaces added for lisibility*
+
+
+
+#### Second use : Type inheritance
+
+The `extends` keyword can be used right after a class or interface declaration to indicate that it inherits from the specified class or interface. A class can inherit only from **one class** but can inherit from an unlimited number or interfaces. See [Inheritance] for more information. It has the following format
+
+- The `extends` keyword : indicate inheritance from another class or other interface(s)
+
+- A comma-separated list of interfaces and/or a class.
+
+
+
+*Example usage :*
+
+
+
+`animals.lts` | File declaring the Animals namespace
+
+```ruby
+namespace Animals
+
+class Animal
+
+    name = ""
+    
+    # Constructor for the Animal class
+    Animal(name):
+        this.name = name
+
+    # Returns the name of the animal
+    def GetName():
+        return "I am a " + this.name;
+
+class Dog extends Animal
+
+    # Constructor for the Dog class
+    Dog(): base("Dog"); # Calls the base class constructor's (Animal) with argument "Dog"
+
+class Cat extends Animal
+    
+    # Constructor for the Cat class
+    Cat(): base("Cat"); # calls the base class constructor's (Animal) with argument "Cat"
+```
+
+
+
+`index.lts` | File rendered
+
+```ruby
+from "animals.lts" import Animals
+
+cat = new Cat()
+
+p(cat.GetName())
+
+dog = new Dog()
+
+p(dog.GetName())
+```
+
+
+
+<div>
+<b>Output</b>
+<p>I am a Cat</p>
+<p>I am a Dog</p>
+</div>
