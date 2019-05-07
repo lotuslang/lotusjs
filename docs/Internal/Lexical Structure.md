@@ -156,7 +156,7 @@ The `while` keyword is used to declare a conditional loop. See [while loop]() fo
 *Example usage :*
 
 ```ruby
-isFinished = false;
+isFinished = false
 someString = "Hello world!"
 counter = 0
 
@@ -291,7 +291,7 @@ The `foreach` keyword is used to declare a loop which iterates through a collect
 
 - a *collection* : this is the collection that this loop will iterate through.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `foeach` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `foreach` declaration.
+- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `foreach` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `foreach` declaration.
 
 *Example usage :*
 
@@ -353,7 +353,7 @@ marks = [ 14, 13, 8, 10, 19 ]
 
 foreach mark in marks
     if (mark < 10)
-        continue;
+        continue
     p(mark)
 ```
 
@@ -388,7 +388,7 @@ The `def` keyword is used to declare a function or a method. Functions are fonda
 ```ruby
 def SayHiTo(username)
     p("Oh, hi " + username)
-    
+
 SayHiTo("Mark")
 ```
 
@@ -415,17 +415,17 @@ The `class` and `interface` keywords are used, respectively, to declare a class 
 
 ```ruby
 class Vehicle
-    
+
     brand = ""
     shortName = ""
-    
+
     Vehicle(brand, shortName)
         this.brand = brand
         this.shortName = shortName
-        
+
     def printInfo()
         p("This vehicle is a " + shortName + " from " + brand)
-         
+
 lightCycle = new Vehicle("Syd Mead", "Light cycle")
 lightCycle.printInfo()
 ```
@@ -457,8 +457,6 @@ def capitalizeFirstLetter(inputString)
     return inputString
 ```
 
-
-
 `index.lts` | File used as the website landing page
 
 ```ruby
@@ -480,12 +478,10 @@ The  `import` keyword is used to import a namespace. See [Namespaces]() and [fro
 
 - an *identifier* : the name of the namespace you want to import
 
-
-
 ```ruby
 import System.Text
 
-strBuilder = new StringBuilder("");
+strBuilder = new StringBuilder("")
 
 strBuilder.appendLine("Hello world!")
 strBuilder.appendLine("Welcome to the internet!")
@@ -514,12 +510,12 @@ namespace PersonalLib
 def fibonacci(n)
     current = 0
     next = 1
-    
+
     for int i = 0; i < n; i++
         temp = current
         current = next
         next += temp
-        
+
     return current
 ```
 
@@ -554,7 +550,7 @@ The `this` keyword is used to referer to the current instance of a class or inte
 
 ```ruby
 class Student
-    
+
     name = ""
     grade = -1
     marks = []
@@ -566,8 +562,6 @@ class Student
         this.marks = marks
         averageMark = marks.average()
 ```
-
-
 
 ### extends keyword
 
@@ -646,22 +640,22 @@ class Animal
     name = ""
 
     # Constructor for the Animal class
-    Animal(name):
+    Animal(name)
         this.name = name
 
     # Returns the name of the animal
-    def getName():
+    def getName()
         return "I am a " + this.name;
 
 class Dog extends Animal
 
     # Constructor for the Dog class
-    Dog(): base("Dog"); # Calls the base class constructor's (Animal) with argument "Dog"
+    Dog(): base("Dog") # Calls the base class constructor's (Animal) with argument "Dog"
 
 class Cat extends Animal
 
     # Constructor for the Cat class
-    Cat(): base("Cat"); # calls the base class constructor's (Animal) with argument "Cat"
+    Cat(): base("Cat") # calls the base class constructor's (Animal) with argument "Cat"
 ```
 
 `index.lts` | File rendered
@@ -683,5 +677,3 @@ p(dog.GetName())
 <p>I am a Cat</p>
 <p>I am a Dog</p>
 </div>
-
-
