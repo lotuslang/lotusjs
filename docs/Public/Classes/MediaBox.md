@@ -44,7 +44,7 @@ Box
 
 | Nom     | Description                                                                                       | Type   | Accessibilité |
 | ------- | ------------------------------------------------------------------------------------------------- | ------ | ------------- |
-| alt     | Texte alternatif affiché si le fichier ne se charge pas ou si l'utilisateur à un handicap visuel. | string | public        |
+| alt     | Texte alternatif affiché si le fichier ne se charge pas ou si l'utilisateur à un handicap visuel  | string | public        |
 | uri     | URI du média. Peut désigner un fichier local, à distance, ou une portion de document HTML         | URI    | public        |
 | visible | Indique si l'instance est visible                                                                 | bool   | public        |
 
@@ -56,7 +56,7 @@ Box
 
 ## Remarques
 
-Cette classe devrait être utilisé principalement si le média n'est pas connu lorsque l'objet est créer, ou ne convient à aucun des types héritants (`ImageBox`, `VideoBox`, `AudioBox`, et `CodeBox`).
+Cette classe devrait être utilisée principalement si le média n'est pas connu lorsque l'objet est créé, ou ne convient à aucun des types héritants (`ImageBox`, `VideoBox`, `AudioBox`, et `CodeBox`).
 
 ## Historique & disponibilité
 
