@@ -10,11 +10,11 @@ public class Namespace.Class_Name < Base_Class_Name
 
 ### Hérite de
 
-Base_Class (Classe(s)donc cette classe hérite)
+Base_Class (Classe(s) dont cette classe hérite)
 
 ### Héritée par
 
-Sub_Class_Name (Classe(s) qui hérite de cette classe)
+Sub_Class_Name (Classe(s) qui héritent de cette classe)
 
 
 
