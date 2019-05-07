@@ -1,6 +1,6 @@
 # Box class
 
-Unité de base d'une page web. Peut contenie à peut près n'importe quel élément visuel.
+Unité de base d'une page web. Peut contenir à peu près n'importe quel élément visuel.
 
 ### Définition interne
 
@@ -32,7 +32,7 @@ Aucune classe.
 
 | Nom     | Description                                                    | Type du résultat | Accessibilité |
 | ------- | -------------------------------------------------------------- | ---------------- | ------------- |
-| clear() | Réinistialise la valeur de l'instance, la rendant de fait vide | void             | public        |
+| clear() | Réinitialise la valeur de l'instance, la rendant de fait vide  | void             | public        |
 
 ## Membres
 
