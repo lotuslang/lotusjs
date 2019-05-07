@@ -1,6 +1,6 @@
 # Object class
 
-La classe de base héritée par toutes les class . Expose des fonctions basiques, telles que `getId`, `getType`, `equals`, et `toString`.
+La classe de base héritée par toutes les class. Expose des fonctions basiques, telles que `getId`, `getType`, `equals`, et `toString`.
 
 ### Définition interne
 
@@ -10,7 +10,7 @@ public class System.Object
 
 ### Hérite de
 
-Aucune classes.
+Aucune classe.
 
 ### Héritée par
 
@@ -18,12 +18,12 @@ Toutes les classes.
 
 ## Méthodes & Constructeurs
 
-### Contructeurs
+### Constructeurs
 
 | Nom              | Description                    | Accessibilité |
 | ---------------- | ------------------------------ | ------------- |
 | Object()         | Créer un nouvel object.        | public        |
-| Object(Object o) | Créer un objet à partir de `o` | public        |
+| Object(Object o) | Créer un objet à partir de `o`.| public        |
 
 Note : Le constructeur `Object()` de cette classe est implicite.
 
@@ -47,9 +47,9 @@ Note : Le constructeur `Object(Object o)` est utilisé lors d'un cast à ce type
 
 ## Remarques
 
-Étant donné que cette classe est une classe de base, n'importe quel instance peut être castée à ce type.
+Étant donné que cette classe est une classe de base, n'importe quelle instance peut être castée à ce type.
 
-De plus, cela signifie que n'importe classes contient les méthodes de ce type. Cependant, certaines classes pourraient overrider ces mpéthodes. Merci de vous référer à la documentation de ces classes pour plus d'informations.
+De plus, cela signifie que n'importe quelle classe contient les méthodes de ce type. Cependant, certaines classes pourraient overrider ces méthodes. Merci de vous référer à la documentation de ces classes pour plus d'informations.
 
 ## Historique & disponibilité
 
