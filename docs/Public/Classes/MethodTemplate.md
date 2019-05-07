@@ -32,9 +32,9 @@ Une description du résultat et de ce qu'il représente, voire comment il a ét�
 
 *Rubrique optionelle*
 
-*Mentionner les overloads s'il y en a*
+*Mentionner les overrides s'il y en a*
 
-*Mentionner comment overrider/implémenter la méthode si besoin, ainsi que les conventions associée à cette implémentation*
+*Mentionner comment overrider/implémenter la méthode si besoin, ainsi que les conventions associées à cette implémentation*
 
 ## Historique
 
