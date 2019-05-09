@@ -12,14 +12,14 @@ Comments are one or multiple lines of text ignored by the interpreter. See [Comm
 
 ### Single line comments
 
-The symbol `#` is used to declare a single line comment. It can be used on a new line, or after a line of code. If it is included in a tring or character literal, it is ignored. The rest of the line after this symbol is interpreted as a comment.
+The symbol `#` is used to declare a single line comment. It can be used on a new line, or after a line of code. If it is included in a string or character literal, it is ignored. The rest of the line after this symbol is interpreted as a comment.
 
 *Example usage :*
 
 ```ruby
 # This is a single line comment
 h1("Hello world!") # This is also a single line comment
-p("This # is not declaring a comment because it is in a string") # but this one is declaring a comment
+p("This # is not a comment because it is in a string") # but this one is a comment
 
 # This code is interpreted as a comment because it begins with a '#' symbol
 # h2("And welcome on my amazing website!")
@@ -27,7 +27,7 @@ p("This # is not declaring a comment because it is in a string") # but this one 
 
 ### Limited or multi line comments
 
-The symbol `#` repeated three times (`###`) is used to delimit the beginning and end of a limited or multi line comment. It can be only be used on a new line. If it is included in a tring or character literal, it is ignored. A limited or multi line comment is delimited by a pair of `###`.
+The symbol `#` repeated three times (`###`) is used to delimit the beginning and end of a limited or multi line comment. It can only be used on a new line. If it is included in a string or character literal, it is ignored. A limited or multi line comment is delimited by a pair of `###`.
 
 *Example usage :*
 
@@ -45,7 +45,7 @@ p("### has no effect in a string !")
 
 ### Embedded documentation
 
-The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. See [Embedded documentation]() for more information.
+The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. See [Embedded documentation]() for more informations.
 
 **Note :** This type of comment can be used as a multi line comment or to automatically generate documentation. See [Embedded documentation]() for more information.) section for more information.
 
