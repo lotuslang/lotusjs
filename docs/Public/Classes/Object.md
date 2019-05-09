@@ -33,11 +33,12 @@ Note : Le constructeur `Object(Object o)` est utilisé lors d'un cast à ce type
 
 | Nom                    | Description                                                                                         | Type du résultat | Accessibilité |
 | ---------------------- | --------------------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| equals(Object)         | Retourne `true` si l'objet passé est égal à l'objet actuel. Retourne `false` dans le cas contraire. | bool             | public        |
-| equals(Object, Object) | Retourne `true` si les deux objets passés sont égaux. Retourne `false` dans le cas contraire        | bool             | public static |
-| getId()                | Retourne l'ID de l'objet.                                                                           | string           | public        |
-| getType()              | Retourne le Type de l'objet                                                                         | Type             | public        |
-| toString()             | Retourne une chaîne (`string`) qui représente l'objet actuel.                                       | string           | public        |
+| clone(Object)         | Retourne un clone de l'objet.                                                                       | Any
+| equals(Object)         | Retourne `true` si l'objet passé est égal à l'objet actuel. Retourne `false` dans le cas contraire. | Boolean             | public        |
+| equals(Object, Object) | Retourne `true` si les deux objets passés sont égaux. Retourne `false` dans le cas contraire.       | Boolean             | public static |
+| getId()                | Retourne l'ID de l'objet.                                                                           | String           | public        |
+| getType()              | Retourne le Type de l'objet                                                                         | Any             | public        |
+| toString()             | Retourne une chaîne (`string`) qui représente l'objet actuel.                                       | String           | public        |
 
 ## Exemples
 
