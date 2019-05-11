@@ -30,9 +30,9 @@ Aucune classe.
 
 ### Méthodes
 
-| Nom     | Description                                                    | Type du résultat | Accessibilité |
-| ------- | -------------------------------------------------------------- | ---------------- | ------------- |
-| clear() | Réinitialise la valeur de l'instance, la rendant de fait vide  | void             | public        |
+| Nom     | Description                                                   | Type du résultat | Accessibilité |
+| ------- | ------------------------------------------------------------- | ---------------- | ------------- |
+| clear() | Réinitialise la valeur de l'instance, la rendant de fait vide | void             | public        |
 
 ## Membres
 

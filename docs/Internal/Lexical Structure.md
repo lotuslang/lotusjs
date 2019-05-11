@@ -23,8 +23,8 @@ h1 {
 } # This is also a single line comment
 
 p {
-    "This # is not declaring a comment because it is in a string"
-} # but this one is declaring a comment
+    "This # is not a comment because it is in a string"
+} # but this one is a comment
 
 # This code is interpreted as a comment because it begins with a '#' symbol
 # h2("And welcome on my amazing website!")
@@ -52,7 +52,7 @@ p {
 
 ### Embedded documentation
 
-The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. See [Embedded documentation]() for more informations.
+The symbol `=` followed by the word `begin` is used to declare the start of an embedded documentation. The symbol `=` followed by the word `end` is used to declare the end of an embedded documentation. Each delimiter (`=begin` and `=end`) must be on a new line. See [Embedded documentation]() for more information.
 
 **Note :** This type of comment can be used as a multi line comment or to automatically generate documentation. See [Embedded documentation]() for more information.) section for more information.
 

@@ -38,7 +38,7 @@ Aucune classe.
 ## Membres
 
 | Nom   | Description                               | Type  | Accessibilité |
-| ----- |  ---------------------------------------  | ----- | ------------- |
+| ----- | ----------------------------------------- | ----- | ------------- |
 | boxes | La liste de `Box` qui constituent la page | Box[] | public        |
 
 ## Exemple(s)

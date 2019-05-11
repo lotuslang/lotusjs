@@ -16,8 +16,6 @@ Base_Class (Classe(s) dont cette classe hérite)
 
 Sub_Class_Name (Classe(s) qui héritent de cette classe)
 
-
-
 ## Méthodes & Constructeurs
 
 ### Constructeurs

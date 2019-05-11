@@ -20,10 +20,10 @@ Toutes les classes.
 
 ### Constructeurs
 
-| Nom              | Description                    | Accessibilité |
-| ---------------- | ------------------------------ | ------------- |
-| Object()         | Créer un nouvel object.        | public        |
-| Object(Object o) | Créer un objet à partir de `o`.| public        |
+| Nom              | Description                     | Accessibilité |
+| ---------------- | ------------------------------- | ------------- |
+| Object()         | Créer un nouvel object.         | public        |
+| Object(Object o) | Créer un objet à partir de `o`. | public        |
 
 Note : Le constructeur `Object()` de cette classe est implicite.
 
@@ -33,11 +33,11 @@ Note : Le constructeur `Object(Object o)` est utilisé lors d'un cast à ce type
 
 | Nom                    | Description                                                                                         | Type du résultat | Accessibilité |
 | ---------------------- | --------------------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| clone(Object)         | Retourne un clone de l'objet.                                                                       | Any
-| equals(Object)         | Retourne `true` si l'objet passé est égal à l'objet actuel. Retourne `false` dans le cas contraire. | Boolean             | public        |
-| equals(Object, Object) | Retourne `true` si les deux objets passés sont égaux. Retourne `false` dans le cas contraire.       | Boolean             | public static |
+| clone(Object)          | Retourne un clone de l'objet.                                                                       | Any              |               |
+| equals(Object)         | Retourne `true` si l'objet passé est égal à l'objet actuel. Retourne `false` dans le cas contraire. | Boolean          | public        |
+| equals(Object, Object) | Retourne `true` si les deux objets passés sont égaux. Retourne `false` dans le cas contraire.       | Boolean          | public static |
 | getId()                | Retourne l'ID de l'objet.                                                                           | String           | public        |
-| getType()              | Retourne le Type de l'objet                                                                         | Any             | public        |
+| getType()              | Retourne le Type de l'objet                                                                         | Any              | public        |
 | toString()             | Retourne une chaîne (`string`) qui représente l'objet actuel.                                       | String           | public        |
 
 ## Exemples
