@@ -493,6 +493,59 @@ lightCycle.printInfo()
 <p>This is a Light cycle from Syd Mead</p>
 </div>
 
+### new keyword
+
+The `new` keyword is used to create a new instance of a class or interface. It has the following format
+
+- the `new` keyword : create a new instance of the specified class or interface
+
+- an `identifier` : this is the name of the class or interface you want to instantiate
+
+*Example usage :*
+
+`logger.lts` | File defining the `Logger` class
+
+```ruby
+namespace Utils.Logging
+
+import System.Text
+
+class Logger {
+    strBuilder = default(StringBuilder)
+    logInConsole = true;
+    
+    Logger(name, inConsole = true) {
+        strBuilder = new StringBuilder("Started logging for " + name)
+        logInConsole = inConsole
+    }
+
+    def append(text) {
+        strBuilder.appendLine(text)
+    }
+        
+    def log() {
+        if (logInConsole) {
+            print("[{browser.time.nowFormated()}] : " + strBuilder.toString() + " ({name})")
+        } else {
+            document.write(strBuilder.toString())
+        }
+        
+        strBuilder.clear()
+    }
+}
+```
+
+`index.lts` | The rendered file
+
+```ruby
+import Utils.Logging
+
+logger = new Logger("global", false)
+
+logger.append("This is a log message")
+logger.log()
+```
+
 ### namespace keyword
 
 The `namespace` keyword is used to declare certain functions, classes and interfaces as "belonging" to a namespace. That is, they are only accessible if this exact namespace is referenced through an `import` directive in the file wanting to use it. It can only be used once in a file. See [Namespaces]() and [from and import keywords]() for more information. It has the following format
@@ -505,10 +558,10 @@ The `namespace` keyword is used to declare certain functions, classes and interf
 
 *Example usage :*
 
-`perso_lib.lts` | File that contains functions in the `PersonalLib` namespace
+`text-utils.lts` | File that contains functions in the `Utils.Text` namespace
 
 ```ruby
-namespace PersonalLib
+namespace Utils.Text
 
 def capitalizeFirstLetter(inputString) {
     inputString[0] = inputString[0].toUpper()
@@ -516,10 +569,10 @@ def capitalizeFirstLetter(inputString) {
 }
 ```
 
-`index.lts` | File used as the website landing page
+`index.lts` | The rendered file
 
 ```ruby
-from "perso_lib.lts" import PersonalLib
+from "perso_lib.lts" import Utils.Text
 
 p {
     capitalizeFirstLetter("capitalization is important")
@@ -565,10 +618,10 @@ The `from` keyword is used in combination with an `import` statement to indicate
 
 *Example usage :*
 
-`perso_lib.lts` | File that contains functions in the `PersonalLib`  namespace
+`misc-utils.lts` | File that contains functions in the `Utils.Misc`  namespace
 
 ```ruby
-namespace PersonalLib
+namespace Utils.Misc
 
 def fibonacci(n) {
     current = 0
@@ -584,10 +637,10 @@ def fibonacci(n) {
 }
 ```
 
-`index.lts` | The homepage of the website
+`index.lts` | The rendered file
 
 ```ruby
-from "perso_lib.lts" import PersonalLib
+from "misc-utils.lts" import Utils.Misc
 
 for int i = 0; i < 10; i++; {
     p {        
