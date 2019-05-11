@@ -18,8 +18,13 @@ The symbol `#` is used to declare a single line comment. It can be used on a new
 
 ```ruby
 # This is a single line comment
-h1("Hello world!") # This is also a single line comment
-p("This # is not a comment because it is in a string") # but this one is a comment
+h1 {
+    "Hello world!"
+} # This is also a single line comment
+
+p {
+    "This # is not declaring a comment because it is in a string"
+} # but this one is declaring a comment
 
 # This code is interpreted as a comment because it begins with a '#' symbol
 # h2("And welcome on my amazing website!")
@@ -40,7 +45,9 @@ comment
 
 ### <--- This starts the comments | and this ends it ---> ###
 
-p("### has no effect in a string !")
+p {
+    "### has no effect in a string !"
+}
 ```
 
 ### Embedded documentation
@@ -70,11 +77,11 @@ The `if` and `else` keywords are used to create conditional code blocks. See [Co
 
 - a *condition* in parenthesis : If this condition evaluates to true, execute the following code block or line. Otherwise, if an `else` clause (keyword + code block/line) is declared,  execute it. If no `else` clause is declared, do nothing.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed if the condition is true. If it's a single code line, it can be on the same line as the `if` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `if` keyword.
+- a *code line* OR a *code block* : this is the code that is to be executed if the condition is true. If it's a single code line, it can be on the same line as the `if` declaration, or in a code block. If it's a code block (ie. one or more code lines), it must be on a new line, and between curly braces (`{}`).
 
 - the `else` keyword : declares an `else` clause. It can be directly followed by another `if` keyword  to create an if/else clauses chain, in which case it's also followed by a condition in parenthesis. It can be omitted. If it is omitted, then there is no code block/line corresponding to it.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed if the condition is true. If it's a single code line, it can be on the same line as the `if` and  `else` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with the same indetation as the `if` code block
+- a *code line* OR a *code block* : this is the code that is to be executed if the condition is true. If it's a single code line, it can be on the same line as the `if` and  `else` declaration, or in a code block. If it's a code block (ie. one or more code lines), it must be on a new line, and between curly braces (`{}`).
 
 **Note :** You can chain multiple if/else clause. See [Conditions]() for more information.
 
@@ -83,10 +90,15 @@ The `if` and `else` keywords are used to create conditional code blocks. See [Co
 ```ruby
 someCondition = true
 
-if (someCondition)
-    p("Hello there")
-else
-    p("Goodnight world")
+if (someCondition) {
+    p {
+        "Hello there"
+    }
+} else {
+    p {
+        "Goodnight world"
+    }
+}
 ```
 
 <div>
@@ -97,14 +109,23 @@ else
 ```ruby
 n = 4
 
-if (n == 1)
-    p("n is equal to 1")
-else if (n == 2)
-    p("n is equal to 2")
-else if (n == 3)
-    p("n is equal to 3")
-else
-    p("n is more than 3")
+if (n == 1) {
+    p {
+        "n is equal to 1"
+    }
+} else if (n == 2) {
+    p {
+        "n is equal to 2"
+    }
+} else if (n == 3) {
+    p {
+        "n is equal to 3"
+    }
+} else {
+    p {
+        "n is more than 3"
+    }
+}
 ```
 
 <div>
@@ -115,7 +136,7 @@ else
 ```ruby
 name = "John"
 
-if (name == "John") p("Hello John") else ("Hello world") # Compact version
+if (name == "John") p { "Hello John" } else p { "Hello world" } # Compact version
 ```
 
 <div>
@@ -133,9 +154,13 @@ The `true` and `false` keywords are used, respectively, to declare a condition t
 someCondition = false
 
 if (someCondition)
-    p("Hello John!")
+    p {
+        "Hello John!"
+    }
 else
-    p("Hello Clara!")
+    p {
+        "Hello Clara!"
+    }
 ```
 
 <div>
@@ -151,7 +176,7 @@ The `while` keyword is used to declare a conditional loop. See [while loop]() fo
 
 - a *condition* in parenthesis : This condition will be chacked at the beginning of each iteration of the loop. If it's true, execute the code line or contained in the code block. Otherwise, skip the loop and go to the code line after the code block.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `while` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `while`
+- a *code line* OR a *code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `while` declaration, or in a code block. If it's a code block (ie. one or more code lines), it must be on a new line, and between curly braces (`{}`).
 
 *Example usage :*
 
@@ -166,7 +191,9 @@ while (!isNotFinished)
     if (someString[counter] == ' ')
         isFinished = true
     else # else prints the character of 'someString' at index 'counter'
-        p(someString)
+        p {
+            someString
+        }
 ```
 
 <div>
@@ -180,11 +207,11 @@ while (!isNotFinished)
 
 The `do` keyword is used in association with the `while` keyword to create a conditional loop that executes at least once. A `do-while` loop has a different syntax than a `while` loop. It has the following format
 
-- the `do` keyword : declares a `do-while` loop
+- the `do` keyword : declares a `do-while` loop.
 
-- a *code line* OR an *indented code block*  : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `do` and `while` keywords, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `do` and `while` keywords
+- a *code line* OR a *code block*  : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `do` and `while` keywords, or in a code block. If it's an indentea code. one or more code lines), it must be on a new line, and between curly braces (`{}`).
 
-- the `while` keyword : It is is on a new line, except if the code line is on the same line as the `do` keyword
+- the `while` keyword : It is is on a new line, except if the code line is on the same line as the `do` keyword.
 
 - a *condition* in parenthesis : this condition will be checked at the beginning of each iteration (except the first). If it's true, execute the code line or contained in the code block. Otherwise, skip the loop and go to the code line after the code block.
 
@@ -192,10 +219,10 @@ The `do` keyword is used in association with the `while` keyword to create a con
 
 ```ruby
 do
-    p("Hello") # Will only be executed once because condition is false
+    p { "Hello" } # Will only be executed once because condition is false
 while (false)
 
-do p("World") while (false) # Compact version
+do p { "World" } while (false) # Compact version
 ```
 
 <div>
@@ -216,7 +243,7 @@ The `for` keyword is used to declare a loop. See [for loops]() for more informat
 
 - a *single code statement* : this statement will be executed at the end of each iteration of the loop.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `for` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `for` declaration.
+- a *code line* OR a *code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `for` declaration, or in a code block. If it's an indentea code. one or more code lines), it must be on a new line, and between curly braces (`{}`).
 
 Each of those section must be separated by semicolon.
 
@@ -224,7 +251,7 @@ Each of those section must be separated by semicolon.
 
 ```ruby
 # Creates a paragraphs for each value of 'i'
-for i = 0; i < 3; i++; p(i) # Compact version
+for i = 0; i < 3; i++; p { i } # Compact version
 ```
 
 <div>
@@ -236,8 +263,11 @@ for i = 0; i < 3; i++; p(i) # Compact version
 
 ```ruby
 # Creates a paragraph with the text "The value of j is " followed by the value of 'i'
-for i = 0; i < 5; i++
-    p("The value of j is " + i)
+for i = 0; i < 5; i++; {
+    p {
+        "The value of j is " + i
+    }
+}
 ```
 
 <div>
@@ -256,8 +286,11 @@ for i = 0; i < 5; i++
 ```ruby
 # This loop will never be executed, because the condition is empty, therefore evaluating to 'false'.
 # Equivalent to while (false)
-for ;;
-    p("This is what loneliness looks like") # This line will never be rendered
+for ;;; {
+    p {
+        "This is what loneliness looks like"
+    } # This will never be rendered in the browser
+}
 ```
 
 <div>
@@ -268,8 +301,11 @@ for ;;
 ```ruby
 # Infinite loop.
 # Equivalent to while (true)
-for ; true;
-    p("And this is infinity!")
+for ; true;; {
+    p {
+        "And this is infinity!"
+    }
+}
 ```
 
 <div>
@@ -291,15 +327,18 @@ The `foreach` keyword is used to declare a loop which iterates through a collect
 
 - a *collection* : this is the collection that this loop will iterate through.
 
-- a *code line* OR an *indented code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `foreach` declaration, or in an indented code block. If it's an indented code block (ie. one or more code lines), it must be on a new line, with a indentation of one more than the `foreach` declaration.
+- a *code line* OR a *code block* : this is the code that is to be executed at each iteration of the loop. If it's a single code line, it can be on the same line as the `foreach` declaration, or in a code block. If it's an indentea code. one or more code lines), it must be on a new line, and between curly braces (`{}`).
 
 *Example usage :*
 
 ```ruby
 fruits = [ "Apple", "Banana", "Grapes" ]
 
-foreach fruit in fruits
-    p(fruit)
+foreach fruit in fruits {
+    p {
+        fruit
+    }
+}
 ```
 
 <div>
@@ -312,7 +351,7 @@ foreach fruit in fruits
 ```ruby
 names = [ "John", "Clara" ]
 
-foreach name in names p("Hello " + name) # Compact form
+foreach name in names p { "Hello " + name } # Compact form
 ```
 
 <div>
@@ -330,11 +369,15 @@ The `break` keyword is used to stop the execution of a loop. it can be used in a
 ```ruby
 items = [ "tape", "pen", "glue", "poison", "speaker" ]    
 
-foreach item in items
-    if (item == "poison")
+foreach item in items {
+    if (item == "poison") {
         break
-    else
-        p(item)
+    } else {
+        p {
+            item
+        }
+    }
+}
 ```
 
 <div>
@@ -351,10 +394,15 @@ The `continue` keyword is used to skip an iteration of a loop. It can be used in
 ```ruby
 marks = [ 14, 13, 8, 10, 19 ]
 
-foreach mark in marks
-    if (mark < 10)
+foreach mark in marks {
+    if (mark < 10) {
         continue
-    p(mark)
+    }
+
+    p {
+        mark
+    }
+}
 ```
 
 <div>
@@ -386,8 +434,11 @@ The `def` keyword is used to declare a function or a method. Functions are fonda
 *Example usage*
 
 ```ruby
-def SayHiTo(username)
-    p("Oh, hi " + username)
+def SayHiTo(username) {
+    p {
+        "Oh, hi " + username
+    }
+}
 
 SayHiTo("Mark")
 ```
@@ -414,17 +465,22 @@ The `class` and `interface` keywords are used, respectively, to declare a class 
 *Example usage :*
 
 ```ruby
-class Vehicle
+class Vehicle {
 
     brand = ""
     shortName = ""
 
-    Vehicle(brand, shortName)
+    Vehicle(brand, shortName) {
         this.brand = brand
         this.shortName = shortName
+    }
 
-    def printInfo()
-        p("This vehicle is a " + shortName + " from " + brand)
+    def printInfo() {
+        p {
+            "This vehicle is a " + shortName + " from " + brand
+        }
+    }
+}
 
 lightCycle = new Vehicle("Syd Mead", "Light cycle")
 lightCycle.printInfo()
@@ -452,9 +508,10 @@ The `namespace` keyword is used to declare certain functions, classes and interf
 ```ruby
 namespace PersonalLib
 
-def capitalizeFirstLetter(inputString)
+def capitalizeFirstLetter(inputString) {
     inputString[0] = inputString[0].toUpper()
     return inputString
+}
 ```
 
 `index.lts` | File used as the website landing page
@@ -462,7 +519,9 @@ def capitalizeFirstLetter(inputString)
 ```ruby
 from "perso_lib.lts" import PersonalLib
 
-p(capitalizeFirstLetter("capitalization is important"))
+p {
+    capitalizeFirstLetter("capitalization is important")
+}
 ```
 
 <div>
@@ -486,7 +545,9 @@ strBuilder = new StringBuilder("")
 strBuilder.appendLine("Hello world!")
 strBuilder.appendLine("Welcome to the internet!")
 
-h1(strBuilder)
+h1 {
+    strBuilder.toString()
+}
 ```
 
 <div>
@@ -507,16 +568,18 @@ The `from` keyword is used in combination with an `import` statement to indicate
 ```ruby
 namespace PersonalLib
 
-def fibonacci(n)
+def fibonacci(n) {
     current = 0
     next = 1
 
-    for int i = 0; i < n; i++
+    for int i = 0; i < n; i++; {
         temp = current
         current = next
         next += temp
+    }
 
     return current
+}
 ```
 
 `index.lts` | The homepage of the website
@@ -524,8 +587,11 @@ def fibonacci(n)
 ```ruby
 from "perso_lib.lts" import PersonalLib
 
-for int i = 0; i < 10; i++
-    p(fibonacci(i))
+for int i = 0; i < 10; i++; {
+    p {        
+        fibonacci(i))
+    }
+}
 ```
 
 <div>
@@ -549,18 +615,20 @@ The `this` keyword is used to referer to the current instance of a class or inte
 *Example usage :*
 
 ```ruby
-class Student
+class Student {
 
     name = ""
     grade = -1
     marks = []
     averageMark = -1
 
-    Student(name, grade, marks)
+    Student(name, grade, marks) {
         this.name = name
         this.grade = grade
         this.marks = marks
         averageMark = marks.average()
+    }
+}
 ```
 
 ### extends keyword
@@ -582,9 +650,11 @@ The `extends` keyword can be used at the beginning of a file to signify that it 
 `page_base.lts` | Base file used by every webite's pages
 
 ```ruby
-html
-    head
-        title("Garry's website | " + this.name)
+html {
+    head {
+        title {
+            "Garry's website | " + this.name
+        }
         script(src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
         style(src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
 ```
@@ -597,9 +667,15 @@ extends "page_base.lts"
 
 name = "Home"
 
-body
-    h1("Hello!")
-    p("And welcome to my amazing website!")
+body {
+    h1 {
+        "Hello!" 
+    }
+
+    p {
+        "And welcome to my amazing website!"
+    }
+}
 ```
 
 **Output** when rendering index.lts
@@ -635,27 +711,32 @@ The `extends` keyword can be used right after a class or interface declaration t
 ```ruby
 namespace Animals
 
-class Animal
+class Animal {
 
     name = ""
 
     # Constructor for the Animal class
-    Animal(name)
+    Animal(name) {
         this.name = name
+    }
 
     # Returns the name of the animal
-    def getName()
-        return "I am a " + this.name;
+    def getName() {
+        return "I am a " + this.name
+    }
+}
 
-class Dog extends Animal
+class Dog extends Animal {
 
     # Constructor for the Dog class
     Dog(): base("Dog") # Calls the base class constructor's (Animal) with argument "Dog"
+}
 
-class Cat extends Animal
+class Cat extends Animal {
 
     # Constructor for the Cat class
     Cat(): base("Cat") # calls the base class constructor's (Animal) with argument "Cat"
+}
 ```
 
 `index.lts` | File rendered
@@ -665,11 +746,15 @@ from "animals.lts" import Animals
 
 cat = new Cat()
 
-p(cat.GetName())
+p {
+    cat.GetName()
+}
 
 dog = new Dog()
 
-p(dog.GetName())
+p {
+    dog.GetName() 
+}
 ```
 
 <div>
