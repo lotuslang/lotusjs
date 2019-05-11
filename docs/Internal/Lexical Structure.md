@@ -6,6 +6,22 @@ For more user- and beginner-friendly informations, as well as more in-depth expl
 
 If you're a developers wanting to implement a tokenizer/lexer for Lotus, you might want to see [Lexer Algorithms]() for more machine-friendly definitions.
 
+
+
+## Preface : definitions
+
+This section defines some of the technical words used in this document. Some of those are context-specific. In such a case, multiple definitions will be given and the context will be noted in *italics*.
+
+
+
+**Comment** : Text that is ignored by the interpreter
+
+**Condition** : 
+
+**Keyword** : Word that has a special meaning to the interpreter, and as such, can't be used as a variable identifier, class identifier, interface identifier, function identifier, or method identifier
+
+
+
 ## Comments
 
 Comments are one or multiple lines of text ignored by the interpreter. See [Comments]() for more information.
