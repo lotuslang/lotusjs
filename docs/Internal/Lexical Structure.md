@@ -396,9 +396,9 @@ marks = [ 14, 13, 8, 10, 19 ]
 
 foreach mark in marks {
     if (mark < 10) {
-        continue
+        continue
     }
-    
+
     p {
         mark
     }
@@ -576,8 +576,8 @@ def fibonacci(n) {
         temp = current
         current = next
         next += temp
-    }
-    
+    }
+
     return current
 }
 ```
@@ -589,7 +589,7 @@ from "perso_lib.lts" import PersonalLib
 
 for int i = 0; i < 10; i++; {
     p {        
-        fibonacci(i))
+        fibonacci(i))
     }
 }
 ```
@@ -669,9 +669,9 @@ name = "Home"
 
 body {
     h1 {
-        "Hello!" 
+        "Hello!" 
     }
-    
+
     p {
         "And welcome to my amazing website!"
     }
@@ -753,7 +753,7 @@ p {
 dog = new Dog()
 
 p {
-    dog.GetName() 
+    dog.GetName() 
 }
 ```
 
