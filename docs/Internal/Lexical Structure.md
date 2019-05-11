@@ -186,14 +186,16 @@ someString = "Hello world!"
 counter = 0
 
 # Repeats until the variable "IisFinished" is set to true
-while (!isNotFinished)
+while (!isNotFinished) {
     # if the character of 'someString' at index 'counter' is equal to ' '
-    if (someString[counter] == ' ')
+    if (someString[counter] == ' ') {
         isFinished = true
-    else # else prints the character of 'someString' at index 'counter'
+    } else { # else prints the character of 'someString' at index 'counter'
         p {
             someString
         }
+    }
+    
 ```
 
 <div>
@@ -218,9 +220,9 @@ The `do` keyword is used in association with the `while` keyword to create a con
 *Example usage :*
 
 ```ruby
-do
+do {
     p { "Hello" } # Will only be executed once because condition is false
-while (false)
+} while (false)
 
 do p { "World" } while (false) # Compact version
 ```
@@ -729,13 +731,13 @@ class Animal {
 class Dog extends Animal {
 
     # Constructor for the Dog class
-    Dog(): base("Dog") # Calls the base class constructor's (Animal) with argument "Dog"
+    Dog(): base("Dog") { } # Calls the base class constructor's (Animal) with argument "Dog"
 }
 
 class Cat extends Animal {
 
     # Constructor for the Cat class
-    Cat(): base("Cat") # calls the base class constructor's (Animal) with argument "Cat"
+    Cat(): base("Cat") { } # calls the base class constructor's (Animal) with argument "Cat"
 }
 ```
 
