@@ -195,7 +195,6 @@ while (!isNotFinished) {
             someString
         }
     }
-    
 ```
 
 <div>
