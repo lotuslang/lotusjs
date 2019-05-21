@@ -33,7 +33,9 @@ Lotus is an open-source language created to facilitate the work of web designers
    - [x] [Definitions](definitions)
    - [x] [Token types](token-types)
    - [ ] [Tokens Railroad Diagrams](tokens-railroad-diagrams)
+   - [ ] [Tokenization Errors](tokenization-errors)
    - [ ] [Parser Railroad Diagrams](parser-railroad-diagrams)
+   - [ ] [Parsing Errors](parsing-errors)
    - [ ] [Parse Tree Model](parse-tree-model)
    - [ ] [Preprocessing the input stream](preprocessing-the-input-stream)
 
