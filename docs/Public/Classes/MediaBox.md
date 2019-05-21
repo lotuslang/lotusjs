@@ -26,10 +26,11 @@ Box
 
 ### Constructeurs
 
-| Nom              | Description                                                                        | Accessibilité |
-| ---------------- | ---------------------------------------------------------------------------------- | ------------- |
-| Mediabox()       | Créer une nouvelle instance de `MediaBox`                                          | public        |
-| MediaBox(string) | Créer une nouvelle instance de `MediaBox` à partir du média désigné par l'argument | public        |
+| Nom                      | Description                                                                                                                                                   | Accessibilité |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| Mediabox()               | Créer une nouvelle instance de `MediaBox`                                                                                                                     | public        |
+| MediaBox(string)         | Créer une nouvelle instance de `MediaBox` à partir du média désigné par l'argument                                                                            | public        |
+| MediaBox(string, string) | Créer une nouvelle instance de `MediaBox` à partir du média désigné par le première argument, et assigne le texte alternatif à la valeur du deuxième argument | public        |
 
 ### Méthodes
 
