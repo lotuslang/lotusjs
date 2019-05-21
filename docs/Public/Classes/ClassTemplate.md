@@ -5,7 +5,7 @@ Courte description de la classe.
 ### Définition interne
 
 ```ruby
-public class Namespace.Class_Name < Base_Class_Name
+public class Namespace.Class_Name extends Base_Class_Name
 ```
 
 ### Hérite de

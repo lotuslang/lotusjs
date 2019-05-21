@@ -1,11 +1,11 @@
-# ClassName class
+# MediaBox class
 
 Courte description de la classe.
 
 ### Définition interne
 
 ```ruby
-public class System.MediaBox < Box
+public class System.MediaBox extends Box
 ```
 
 ### Hérite de
@@ -21,8 +21,6 @@ Box
 - AudioBox
 
 - CodeBox
-
-
 
 ## Méthodes & Constructeurs
 
@@ -42,11 +40,11 @@ Box
 
 ## Membres
 
-| Nom     | Description                                                                                       | Type   | Accessibilité |
-| ------- | ------------------------------------------------------------------------------------------------- | ------ | ------------- |
-| alt     | Texte alternatif affiché si le fichier ne se charge pas ou si l'utilisateur à un handicap visuel  | string | public        |
-| uri     | URI du média. Peut désigner un fichier local, à distance, ou une portion de document HTML         | URI    | public        |
-| visible | Indique si l'instance est visible                                                                 | bool   | public        |
+| Nom     | Description                                                                                      | Type   | Accessibilité |
+| ------- | ------------------------------------------------------------------------------------------------ | ------ | ------------- |
+| alt     | Texte alternatif affiché si le fichier ne se charge pas ou si l'utilisateur à un handicap visuel | string | public        |
+| uri     | URI du média. Peut désigner un fichier local, à distance, ou une portion de document HTML        | URI    | public        |
+| visible | Indique si l'instance est visible                                                                | bool   | public        |
 
 ## Exemple(s)
 
