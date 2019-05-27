@@ -35,7 +35,7 @@ function parseArgs() {
 	let output = { "preservedSwitches": [] }; // preserved switches are switches that don't require arguments
 
 	// arguments given, except the `node` and the file name at the start (i.e. ['usr/bin/node', 'src/index.js'])
-	let pargs = process.argv.slice(2); 
+	let pargs = process.argv.slice(2);
 
 	let currentSwitchName = ""; // var used to store the name of the current switch, if any. It is cleared
 
@@ -60,15 +60,15 @@ function parseArgs() {
 			}
 
 			// If this switch requires an argument
-            if (switches[name]) {
+			if (switches[name]) {
 				// cut the first character to get the switch's name and set it as current awiting switch
-            	currentSwitchName = name;
-                continue;
+				currentSwitchName = name;
+				continue;
 			}
-			
-            // Otherwise assign the switch's name to an index;
-            output["preservedSwitches"].push(name);
-            continue;
+
+			// Otherwise add the switch to the preserved switches list
+			output["preservedSwitches"].push(name);
+			continue;
 		}
 
 		// Otherwise, if the current arg is part of a non-preserved switch
@@ -101,7 +101,7 @@ Object.keys(args).forEach(key => console.log("INFO : Switch '" + key + "' has va
 // Verifies that `file` and `i` both have a value
 if (args["file"]) {
 	args["i"] = args["file"];
-} 
+}
 else if (args["i"]) {
 	args["file"] = args["i"];
 } else {
