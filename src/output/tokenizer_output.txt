@@ -1,0 +1,11 @@
+[
+    "openParenthesis",
+    "closeParenthesis",
+    "openCurlyBrace",
+    "openBracket",
+    "closeBracket",
+    "openCurlyBrace",
+    "openComentary",
+    "whitespace",
+    "closeComentary"
+]
