@@ -13,37 +13,37 @@ async function Tokenize(string) {
 		number : "number",
 		point : "point"
 	};
-	let Tokens = [];
+	let tokens = [];
 	let splitted = string.split('');
 	for (let i = 0; i < splitted.length; i++) {
 		let char = splitted[i];
 
 		if (char === '.') {
-			Tokens.push(TypeOfTokens.point);
+			tokens.push(TypeOfTokens.point);
 			continue;
 		}
 		if (char === '[') {
-			Tokens.push(TypeOfTokens.openBracket);
+			tokens.push(TypeOfTokens.openBracket);
 			continue;
 		}
 		if (char === ']') {
-			Tokens.push(TypeOfTokens.closeBracket);
+			tokens.push(TypeOfTokens.closeBracket);
 			continue;
 		}
 		if (char === '(') {
-			Tokens.push(TypeOfTokens.openParenthesis);
+			tokens.push(TypeOfTokens.openParenthesis);
 			continue;
 		}
 		if (char === ')') {
-			Tokens.push(TypeOfTokens.closeParenthesis);
+			tokens.push(TypeOfTokens.closeParenthesis);
 			continue;
 		}
 		if (char === '{') {
-			Tokens.push(TypeOfTokens.openCurlyBrace);
+			tokens.push(TypeOfTokens.openCurlyBrace);
 			continue;
 		}
 		if (char === '}') {
-			Tokens.push(TypeOfTokens.openCurlyBrace);
+			tokens.push(TypeOfTokens.openCurlyBrace);
 			continue;
 		}
 		if (
@@ -51,16 +51,16 @@ async function Tokenize(string) {
 			splitted[i + 1] == '#' &&
 			splitted[i + 2] == '#'
 		) {
-			if (Tokens.filter(
+			if (tokens.filter(
 					e => e == TypeOfTokens.openComentary).length >
-				Tokens.filter(e => e == TypeOfTokens.closeComentary).length
+				tokens.filter(e => e == TypeOfTokens.closeComentary).length
 			) {
-				Tokens.push(TypeOfTokens.closeComentary);
+				tokens.push(TypeOfTokens.closeComentary);
 			} else {
-				Tokens.push(TypeOfTokens.openComentary);
+				tokens.push(TypeOfTokens.openComentary);
 			};
 		};
 	};
-	return await Tokens;
+	return await tokens;
 }
 module.exports = Tokenize;
