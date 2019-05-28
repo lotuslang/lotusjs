@@ -13,7 +13,6 @@ async function Tokenize(string) {
 		number : "number",
 		point : "point"
 	};
-	let bou
 	let Tokens = [];
 	let splitted = string.split('');
 	for (let i = 0; i < splitted.length; i++) {
