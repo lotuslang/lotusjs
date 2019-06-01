@@ -1,4 +1,4 @@
-let test = new Page("Title");
+let test-okay = new Page("Title");
 4515814
 Page.description = {
 	'hey', true
@@ -9,7 +9,7 @@ Page.description = {
 you see it ?;
 ###;
 
-let test2 = 54874;
+let test_2 = -54874.27245245.21.12.;
 test2++;
-
+test[okay][forkfisdkf]
 =>

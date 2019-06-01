@@ -3,7 +3,7 @@
         "ident-token": "let"
     },
     "2": {
-        "ident-token": "test"
+        "ident-token": "test-okay"
     },
     "3": {
         "equal-token": "="
@@ -12,78 +12,120 @@
         "ident-token": "new"
     },
     "5": {
-        "ident-token": "Page("
+        "ident-token": "Page"
     },
     "6": {
-        "string-token": "\"Title\""
+        "openParenthesis-token": "("
     },
     "7": {
-        "closeParenthesis-token": ")"
+        "string-token": "\"Title\""
     },
     "8": {
-        "semi-colon": ";"
+        "closeParenthesis-token": ")"
     },
     "9": {
-        "number-token": "4515814"
+        "semi-colon": ";"
     },
     "10": {
-        "ident-token": "Page."
+        "number-token": "4515814"
     },
     "11": {
-        "ident-token": "description"
+        "ident-token": "Page"
     },
     "12": {
-        "equal-token": "="
+        "delim-token": "."
     },
     "13": {
-        "openCurly-token": "{"
+        "ident-token": "description"
     },
     "14": {
-        "string-token": "'hey'"
-    },
-    "15": {
-        "commas-token": ","
-    },
-    "16": {
-        "ident-token": "true\n"
-    },
-    "17": {
-        "closeCurly-token": "}"
-    },
-    "18": {
-        "comment-token": "# This is a comment;\n"
-    },
-    "19": {
-        "multi-lines-comment-token": "###this is a multi-lines comment;\nyou see it ?;\n###"
-    },
-    "20": {
-        "ident-token": "let"
-    },
-    "21": {
-        "ident-token": "test2"
-    },
-    "22": {
         "equal-token": "="
     },
+    "15": {
+        "openCurly-token": "{"
+    },
+    "16": {
+        "string-token": "'hey'"
+    },
+    "17": {
+        "commas-token": ","
+    },
+    "18": {
+        "ident-token": "true"
+    },
+    "19": {
+        "closeCurly-token": "}"
+    },
+    "20": {
+        "comment-token": "# This is a comment;\n"
+    },
+    "21": {
+        "multi-lines-comment-token": "### this is a multi-lines comment;\nyou see it ?;\n###"
+    },
+    "22": {
+        "ident-token": "let"
+    },
     "23": {
-        "number-token": "54874"
+        "ident-token": "test_"
     },
     "24": {
-        "semi-colon": ";"
+        "number-token": "2"
     },
     "25": {
-        "ident-token": "test2"
+        "equal-token": "="
     },
     "26": {
-        "plus-token": "+"
+        "number-token": "-54874.27245245"
     },
     "27": {
-        "plus-token": "+"
+        "delim-token": "."
     },
     "28": {
-        "semi-colon": ";"
+        "number-token": "21.12"
     },
     "29": {
-        "test-token": "=>"
+        "delim-token": "."
+    },
+    "30": {
+        "semi-colon": ";"
+    },
+    "31": {
+        "ident-token": "test"
+    },
+    "32": {
+        "number-token": "2"
+    },
+    "33": {
+        "plus-token": "+"
+    },
+    "34": {
+        "plus-token": "+"
+    },
+    "35": {
+        "semi-colon": ";"
+    },
+    "36": {
+        "ident-token": "test"
+    },
+    "37": {
+        "openBracket-token": "["
+    },
+    "38": {
+        "ident-token": "okay"
+    },
+    "39": {
+        "closeBracket-token": "]"
+    },
+    "40": {
+        "openBracket-token": "["
+    },
+    "41": {
+        "ident-token": "forkfisdkf"
+    },
+    "42": {
+        "closeBracket-token": "]"
+    },
+    "43": {
+        "arrow-token": "=>"
     }
 }

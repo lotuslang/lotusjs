@@ -16,12 +16,12 @@ async function Tokenize(input) {
 	let splitted = input.split('');
 	splitted = splitted.filter(chr => chr.charCodeAt(0) !== 0x000D); // Pre-process pour enlever les "\r".
 	let place = 1;
-	let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "y", "x", "y", "z"]
+	let alphabet = ["-", "_", "a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "y", "x", "y", "z"]
 	for (let i = 0; i < splitted.length; i++) {
 		let char = splitted[i];
 
 		if (char === "#" && splitted[i + 1] === "#" && splitted[i + 2] === "#") { // Multi-line comment.
-			i += 3;
+			i += 2;
 			let string = "###";
 			while (char !== undefined) {
 				if (splitted[i] === "#" && splitted[i + 1] === "#" && splitted[i + 2] !== "#") break;
@@ -84,12 +84,19 @@ async function Tokenize(input) {
 			place++;
 		}
 
-		if (isDigit(char)) { // Numbers.
+		if (isDigit(char) || char === "-" && isDigit(splitted[i + 1]) || char === "+" && isDigit(splitted[i + 1])) { // Numbers.
 			let number = "";
+			let decimal = false;
 			do {
 				number += char;
 				i++;
 				char = splitted[i];
+				if(char === "." && isDigit(splitted[i+1]) && !decimal) {
+					number += char + splitted[i+1];
+					i+=2;
+					char = splitted[i];
+					decimal = true;
+				}
 			} while (isDigit(char));
 			tokens[place] = {
 				"number-token": number
@@ -98,17 +105,17 @@ async function Tokenize(input) {
 			place++;
 		}
 
-		if (Object.values(TypeOfTokens).includes(char)) { 
-			if (Object.keys(TypeOfTokens).find(key => TypeOfTokens[key].includes(char + splitted[i+1]))) { // Tokens with multiple characteres.
-				let token = Object.keys(TypeOfTokens).find(key => TypeOfTokens[key].includes(char + splitted[i+1]));
+		if (Object.values(TypeOfTokens).includes(char)) {
+			if (Object.keys(TypeOfTokens).find(key => TypeOfTokens[key].includes(char + splitted[i + 1]))) { // Tokens with multiple characteres.
+				let token = Object.keys(TypeOfTokens).find(key => TypeOfTokens[key].includes(char + splitted[i + 1]));
 				let result = "";
-				for(let j = 0; j < TypeOfTokens[token].length; j++, i++) {
-					if(splitted[i] != TypeOfTokens[token][j]) break;
+				for (let j = 0; j < TypeOfTokens[token].length; j++, i++) {
+					if (splitted[i] != TypeOfTokens[token][j]) break;
 					else {
 						result += splitted[i];
 					}
 				}
-				if(result === TypeOfTokens[token]) {
+				if (result === TypeOfTokens[token]) {
 					tokens[place] = {
 						[token]: TypeOfTokens[token]
 					}
@@ -129,7 +136,8 @@ async function Tokenize(input) {
 			let string = char;
 			while (char !== undefined) {
 				if (!alphabet.includes(char.toLowerCase())) break;
-				i++;
+				if (alphabet.includes(splitted[i+1].toLowerCase())) i++;
+				else break;
 				char = splitted[i];
 				if (char !== " ") string += char;
 			}
