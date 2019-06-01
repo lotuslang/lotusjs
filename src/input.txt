@@ -1,0 +1,15 @@
+let test = new Page("Title");
+4515814
+Page.description = {
+	'hey', true
+}
+# This is a comment;
+
+### this is a multi-lines comment;
+you see it ?;
+###;
+
+let test2 = 54874;
+test2++;
+
+=>
