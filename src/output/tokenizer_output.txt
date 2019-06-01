@@ -1,11 +1,89 @@
-[
-    "openParenthesis",
-    "closeParenthesis",
-    "openCurlyBrace",
-    "openBracket",
-    "closeBracket",
-    "openCurlyBrace",
-    "openComentary",
-    "whitespace",
-    "closeComentary"
-]
+{
+    "1": {
+        "ident-token": "let"
+    },
+    "2": {
+        "ident-token": "test"
+    },
+    "3": {
+        "equal-token": "="
+    },
+    "4": {
+        "ident-token": "new"
+    },
+    "5": {
+        "ident-token": "Page("
+    },
+    "6": {
+        "string-token": "\"Title\""
+    },
+    "7": {
+        "closeParenthesis-token": ")"
+    },
+    "8": {
+        "semi-colon": ";"
+    },
+    "9": {
+        "number-token": "4515814"
+    },
+    "10": {
+        "ident-token": "Page."
+    },
+    "11": {
+        "ident-token": "description"
+    },
+    "12": {
+        "equal-token": "="
+    },
+    "13": {
+        "openCurly-token": "{"
+    },
+    "14": {
+        "string-token": "'hey'"
+    },
+    "15": {
+        "commas-token": ","
+    },
+    "16": {
+        "ident-token": "true\n"
+    },
+    "17": {
+        "closeCurly-token": "}"
+    },
+    "18": {
+        "comment-token": "# This is a comment;\n"
+    },
+    "19": {
+        "multi-lines-comment-token": "###this is a multi-lines comment;\nyou see it ?;\n###"
+    },
+    "20": {
+        "ident-token": "let"
+    },
+    "21": {
+        "ident-token": "test2"
+    },
+    "22": {
+        "equal-token": "="
+    },
+    "23": {
+        "number-token": "54874"
+    },
+    "24": {
+        "semi-colon": ";"
+    },
+    "25": {
+        "ident-token": "test2"
+    },
+    "26": {
+        "plus-token": "+"
+    },
+    "27": {
+        "plus-token": "+"
+    },
+    "28": {
+        "semi-colon": ";"
+    },
+    "29": {
+        "test-token": "=>"
+    }
+}

@@ -1,7 +1,15 @@
-Page()
-{[]}
+let test = new Page("Title");
+4515814
+Page.description = {
+	'hey', true
+}
+# This is a comment;
 
-### test
+### this is a multi-lines comment;
+you see it ?;
+###;
 
+let test2 = 54874;
+test2++;
 
-###
+=>
