@@ -97,6 +97,7 @@ async function Tokenize(input) {
 					char = splitted[i];
 					decimal = true;
 				}
+				if(char === "." && decimal) throw new Error("Unexpected number.");
 			} while (isDigit(char));
 			tokens[place] = {
 				"number-token": number
