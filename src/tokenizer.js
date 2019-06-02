@@ -251,11 +251,61 @@ function tokenize(inputText) {
             continue;
         }
 
+        // LOGICAL AND OPERATOR
+        if (input[i] === '|' && input[i+1] === '|') {
+            output.push({ "logical-and": input[i] + input[i+1] });
+            continue;
+        }
+
+        // LOGICAL OR OPERATOR
+        if (input[i] === '&' && input[i+1] === '&') {
+            output.push({ "logical-or": input[i] + input[i+1] });
+            continue;
+        }
+
+        if (input[i] === '^' && input[i+1] === '^') {
+            output.push({ "logical-xor": input[i] + input[i+1] });
+            continue;
+        }
+
+
+        if (input[i] === '{') { // si le char actuel est un '{'
+            output.push({ "{": input[i] }); // ajouter un <{-token>
+            continue;
+        }
+
+        if (input[i] === '}') { // si le char actuel est un '}'
+            output.push({ "}": input[i] }); // ajouter un <}-token>
+            continue;
+        }
+
+        if (input[i] === '[') { // si le char actuel est un '['
+            output.push({ "[": input[i] }); // ajouter un <[-token>
+            continue;
+        }
+
+        if (input[i] === ']') { // si le char actuel est un ']'
+            output.push({ "]": input[i] }); // ajouter un <]-token>
+            continue;
+        }
+
+        if (input[i] === '(') { // si le char actuel est un '('
+            output.push({ "(": input[i] }); // ajouter un <(-token>
+            continue;
+        }
+
+        if (input[i] === ')') { // si le char actuel est un ')'
+            output.push({ ")": input[i] }); // ajouter un <)-token>
+            continue;
+        }
+
         // COLON
         if (input[i] === ':') { // si le char actuel est un ':'
             output.push({ "colon": ":" }); //ajouter un <semicolon-token> à l'output avec ':' comme valeur
             continue;
         }
+
+        if (input[i] === ';') continue;
 
         // DELIMITER
         output.push({ "delim": input[i] });
