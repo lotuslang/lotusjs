@@ -1,0 +1,17 @@
+let test = new Page("Title");
+let i = 69.451e-5814 # random number
+test.description = {
+        ###
+        'hey', true
+        ###
+        "hello"[1:3], false
+}
+=begin
+Example method
+=end
+def hello() {
+    let j = 0;
+    let str = "hello" ###+ " world"### + " Mark!";
+
+    test.console.log(str);
+}
