@@ -1,16 +1,16 @@
 // Modules require statements
-//const chalk = require("chalk"); // Lib for coloring the text into console FOR DEBUG.
+const chalk = require("chalk"); // Lib for coloring the text into console FOR DEBUG.
 const fs = require("fs"); // Lib to use a file system, e.g. to read and write files.
 const { promisify } = require("util"); // Lib to transform callbacks into Promise object.
 
 // Internal require statements
 
-const throwHelper = require("./throwhelpers"); // Throw helpers
-const lotus = require("./lotus"); // Global module to work with lotus' syntax
+//const throwHelper = require("./throwhelpers"); // Throw helpers
+
+//const lotusSyntax = require("./lotus"); // Global module to work with lotus' syntax
 
 // Module to transform a stream of characters into a stream of tokens using different algorithms
-const tokenizer = lotus.tokenizer;
-
+//const tokenizer = lotusSyntax.tokenizer;
 
 let readFileAsync = promisify(fs.readFile);
 
@@ -34,8 +34,8 @@ function parseArgs() {
 
 	let output = { "preservedSwitches": [] }; // preserved switches are switches that don't require arguments
 
-	// arguments given, except the `node` and the file name at the start (i.e. ['usr/bin/node', 'src/index.js'])
-	let pargs = process.argv.slice(2);
+	// arguments given, except the `node` and the file name at the start (i.e. ['usr/bin/node', 'src/app.js'])
+	let pargs = process.argv.slice(2); 
 
 	let currentSwitchName = ""; // var used to store the name of the current switch, if any. It is cleared
 
@@ -60,15 +60,15 @@ function parseArgs() {
 			}
 
 			// If this switch requires an argument
-			if (switches[name]) {
+            if (switches[name]) {
 				// cut the first character to get the switch's name and set it as current awiting switch
-				currentSwitchName = name;
-				continue;
+            	currentSwitchName = name;
+                continue;
 			}
-
-			// Otherwise add the switch to the preserved switches list
-			output["preservedSwitches"].push(name);
-			continue;
+			
+            // Otherwise assign the switch's name to an index;
+            output["preservedSwitches"].push(name);
+            continue;
 		}
 
 		// Otherwise, if the current arg is part of a non-preserved switch
@@ -87,7 +87,7 @@ function parseArgs() {
 	if (currentSwitchName != "") {
 
 		// throw an argument exception
-		throwHelper.throwWarn("Exception", "Previous switch " + currentSwitchName + "requires a value, but it wasn't found");
+		throwHelper.throw("Exception", "Previous switch " + currentSwitchName + "requires a value, but it wasn't found");
 	}
 
 	return output; // return the output dictionary
@@ -101,12 +101,11 @@ Object.keys(args).forEach(key => console.log("INFO : Switch '" + key + "' has va
 // Verifies that `file` and `i` both have a value
 if (args["file"]) {
 	args["i"] = args["file"];
-}
+} 
 else if (args["i"]) {
 	args["file"] = args["i"];
 } else {
-    throwHelper.printHelp(); // if no `file` or `i` switch was used, print help
-    process.exit(1);
+	throwHelper.printHelp(); // if no `file` or `i` switch was used, print help
 }
 
 // Reads the file
@@ -116,10 +115,8 @@ readFileAsync(args["i"])
 		console.log("Tokenizing file @ " + args["i"]);
 
 		// Tokenizes the string and stores the result in `tokens`
-        let tokens = tokenizer.tokenizer(file.toString());
-
-        console.log(tokens);
+		let tokens = tokenizer.Tokenize(file.toString());
 	})
 	.catch (err => {
-        throw err; // throw a fatal unknown error
+		throwHelper.throwFatal(err); // throw a fatal unknown error
 	});
