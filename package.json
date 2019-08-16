@@ -1,15 +1,16 @@
 {
   "name": "lotuslang",
   "version": "0.0.1",
-  "description": "A simple templating engine powered the Lotus programming language",
+  "description": "The interpreter for lotuslang",
   "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node src/app.js",
+    "test": "echo \"No test name specified\" && exit 1",
+    "test.tokenizer": "node tests/tokenizer-tests/test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lotuslang/lotus.git"
+    "url": "git+https://github.com/lotuslang/lotusjs.git"
   },
   "keywords": [
     "template",
@@ -22,7 +23,7 @@
   "author": "LotusLang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lotuslang/lotus/issues"
+    "url": "https://github.com/lotuslang/lotusjs/issues"
   },
-  "homepage": "https://github.com/lotuslang/lotus#readme"
+  "homepage": "https://github.com/lotuslang/lotusjs#readme"
 }

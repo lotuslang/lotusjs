@@ -1,122 +1,54 @@
 // Modules require statements
-const chalk = require("chalk"); // Lib for coloring the text into console FOR DEBUG.
 const fs = require("fs"); // Lib to use a file system, e.g. to read and write files.
 const { promisify } = require("util"); // Lib to transform callbacks into Promise object.
 
+const { Precedence } = require("./precedence");
+
 // Internal require statements
 
-//const throwHelper = require("./throwhelpers"); // Throw helpers
-
-//const lotusSyntax = require("./lotus"); // Global module to work with lotus' syntax
+const throwHelper = require("./throwhelpers"); // Throw helpers
+const lotus = require("./lotus"); // Global module to work with lotus' syntax
 
 // Module to transform a stream of characters into a stream of tokens using different algorithms
-//const tokenizer = lotusSyntax.tokenizer;
+const Tokenizer = lotus.tokenizer;
+
 
 let readFileAsync = promisify(fs.readFile);
 
-// var used to check if a switch needs an additional value or not
-let switches =
-{
-	"file": true,
-	"i": true,
-	"output": true,
-	"o": true,
-	"help": false
-};
+// checks if the file supplied exist. If not, print a message
+if (!fs.existsSync(process.argv[2])) {
 
-// parses arguments given to the program
-function parseArgs() {
+	console.log("File " + process.argv[2] + " not found.\n")
 
-	// if no arguments were given
-	if (process.argv.length == 2) {
-		return { }; // return an empty dictionary
-	}
-
-	let output = { "preservedSwitches": [] }; // preserved switches are switches that don't require arguments
-
-	// arguments given, except the `node` and the file name at the start (i.e. ['usr/bin/node', 'src/index.js'])
-	let pargs = process.argv.slice(2); 
-
-	let currentSwitchName = ""; // var used to store the name of the current switch, if any. It is cleared
-
-	for (let i = 0; i < pargs.length; i++) {
-
-		// If this arg is a switch (i.e. starts with an '-', like -h or --file)
-		if (pargs[i].charAt(0) == "-") {
-
-			// if a switch is currently waiting a value
-			if (currentSwitchName != "") {
-
-				// throw an argument exception
-				throwHelper.throw("Exception", "Previous switch " + currentSwitchName + "requires a value, but it wasn't found");
-			}
-
-			var name = pargs[i].substring(1); // name of the switch
-
-			// If this switch is not a shortcut switch (e.g. -h instead of --help)
-			if (pargs[i].charAt(1) == "-") {
-
-				name = pargs[i].substring(2); // cuts the too dash right before (e.g. "--anim" becomes "anim")
-			}
-
-			// If this switch requires an argument
-            if (switches[name]) {
-				// cut the first character to get the switch's name and set it as current awiting switch
-            	currentSwitchName = name;
-                continue;
-			}
-			
-            // Otherwise assign the switch's name to an index;
-            output["preservedSwitches"].push(name);
-            continue;
-		}
-
-		// Otherwise, if the current arg is part of a non-preserved switch
-		if (currentSwitchName != "") {
-			output[currentSwitchName] = pargs[i]; // sets the switch's value to pargs[i]
-			currentSwitchName = "";
-			continue;
-		}
-
-		// Otherwise, assign it to an index
-		output[Object.keys(output).length - 1] = pargs[i];
-
-	}
-
-	// if a switch is currently waiting a value
-	if (currentSwitchName != "") {
-
-		// throw an argument exception
-		throwHelper.throw("Exception", "Previous switch " + currentSwitchName + "requires a value, but it wasn't found");
-	}
-
-	return output; // return the output dictionary
-}
-
-args = parseArgs();
-
-// Debug, can be removed
-Object.keys(args).forEach(key => console.log("INFO : Switch '" + key + "' has value '" + args[key] + "'"));
-
-// Verifies that `file` and `i` both have a value
-if (args["file"]) {
-	args["i"] = args["file"];
-} 
-else if (args["i"]) {
-	args["file"] = args["i"];
-} else {
-	throwHelper.printHelp(); // if no `file` or `i` switch was used, print help
+	// prints help and exits with code 1
+	console.log("Usage :");
+	console.log("\tnpm start [filename]");
+	console.log("\tnode src/app.js [filename]");
+	console.log("Example : npm start tests/general/input-1.lot")
+	console.log("For now, Lotus only supports supplying a file.");
+	console.log("(I mean, what did you except ? We don't really have time for arguments parsing rn)");
+	process.exit(1);
 }
 
 // Reads the file
-readFileAsync(args["i"])
+readFileAsync(process.argv[2])
 	.then(async file => {
 		// Debug, can be removed
-		console.log("Tokenizing file @ " + args["i"]);
+		console.log("Tokenizing file @ " + process.argv[2]);
 
 		// Tokenizes the string and stores the result in `tokens`
-		let tokens = tokenizer.Tokenize(file.toString());
+		let tokenizer = new Tokenizer(file.toString());
+
+		console.log("consuming #1 : " + JSON.stringify(tokenizer.consume()));
+
+		console.log("next 3 tokens : " + JSON.stringify(tokenizer.peek(3)));
+
+		console.log("consuming #2 : " + JSON.stringify(tokenizer.consume()));
+		console.log("consuming #3 : " + JSON.stringify(tokenizer.consume()));
+		console.log("consuming #4 : " + JSON.stringify(tokenizer.consume()));
 	})
 	.catch (err => {
-		throwHelper.throwFatal(err); // throw a fatal unknown error
+		console.log(err);
+		return;
+		//throw err; // throw a fatal unknown error
 	});
