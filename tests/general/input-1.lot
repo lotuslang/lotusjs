@@ -1,0 +1,40 @@
+# Comment test
+# this is a normal Comment
+
+###
+Multi
+Line
+Comment
+###
+
+# Limited comment test + variable declaration test
+let testVar = ###6 + 3### 9;
+
+# Constructor tests + string test
+let page = new Page("Good ol' title");
+
+# Number test
+let i = 69.451e-5814 # random number
+
+# Property initialization test
+page.description = {
+        ###
+        'hey', true
+        ###
+        "hello"[1:3], false # slice operator test
+}
+
+# Embedded docs test
+=begin
+Example method
+=end
+
+# function definition test
+def hello() {
+    let j = 0;
+
+    let str = "hello" ###+ " world"### + " Mark!";
+
+    # function call test
+    page.console.log(str);
+}
